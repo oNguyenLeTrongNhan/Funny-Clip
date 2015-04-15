@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BaseViewController.h"
+#import "FunBaseViewController.h"
 @interface BaseTabBarController : UITabBarController
 
-@property (retain) BaseViewController* baseViewController;
+@property (weak, nonatomic) IBOutlet UITabBar *tabbar;
+@property (weak, nonatomic) IBOutlet UITabBarItem *item1;
+@property (retain) FunBaseViewController* baseViewController;
 @end

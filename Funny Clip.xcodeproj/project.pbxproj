@@ -7,19 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		384A88CCBCB7E188EC2376DF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4CB76D69A7DC73CF891441 /* libPods.a */; };
 		6915C7D81ADE05E4005AD7E1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6915C7D71ADE05E4005AD7E1 /* main.m */; };
 		6915C7DB1ADE05E4005AD7E1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6915C7DA1ADE05E4005AD7E1 /* AppDelegate.m */; };
-		6915C7DE1ADE05E4005AD7E1 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6915C7DD1ADE05E4005AD7E1 /* BaseViewController.m */; };
-		6915C7E11ADE05E4005AD7E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6915C7DF1ADE05E4005AD7E1 /* Main.storyboard */; };
 		6915C7E31ADE05E4005AD7E1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6915C7E21ADE05E4005AD7E1 /* Images.xcassets */; };
 		6915C7E61ADE05E4005AD7E1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6915C7E41ADE05E4005AD7E1 /* LaunchScreen.xib */; };
 		6915C7F21ADE05E4005AD7E1 /* Funny_ClipTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6915C7F11ADE05E4005AD7E1 /* Funny_ClipTests.m */; };
+		691C35971ADEC02D003B33A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 691C35951ADEC02D003B33A0 /* Main.storyboard */; };
+		691C35AD1ADECD48003B33A0 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 691C35991ADECD48003B33A0 /* home.png */; };
+		691C35AE1ADECD48003B33A0 /* home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 691C359A1ADECD48003B33A0 /* home@2x.png */; };
+		691C35AF1ADECD48003B33A0 /* home_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 691C359B1ADECD48003B33A0 /* home_selected.png */; };
+		691C35B01ADECD48003B33A0 /* home_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 691C359C1ADECD48003B33A0 /* home_selected@2x.png */; };
+		691C35B11ADECD48003B33A0 /* maps.png in Resources */ = {isa = PBXBuildFile; fileRef = 691C359D1ADECD48003B33A0 /* maps.png */; };
+		691C35B21ADECD48003B33A0 /* maps@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 691C359E1ADECD48003B33A0 /* maps@2x.png */; };
+		691C35B31ADECD48003B33A0 /* maps_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 691C359F1ADECD48003B33A0 /* maps_selected.png */; };
+		691C35B41ADECD48003B33A0 /* maps_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 691C35A01ADECD48003B33A0 /* maps_selected@2x.png */; };
+		691C35B51ADECD48003B33A0 /* myplan.png in Resources */ = {isa = PBXBuildFile; fileRef = 691C35A11ADECD48003B33A0 /* myplan.png */; };
+		691C35B61ADECD48003B33A0 /* myplan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 691C35A21ADECD48003B33A0 /* myplan@2x.png */; };
+		691C35B71ADECD48003B33A0 /* myplan_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 691C35A31ADECD48003B33A0 /* myplan_selected.png */; };
+		691C35B81ADECD48003B33A0 /* myplan_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 691C35A41ADECD48003B33A0 /* myplan_selected@2x.png */; };
+		691C35B91ADECD48003B33A0 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 691C35A51ADECD48003B33A0 /* settings.png */; };
+		691C35BA1ADECD48003B33A0 /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 691C35A61ADECD48003B33A0 /* settings@2x.png */; };
+		691C35BB1ADECD48003B33A0 /* settings_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 691C35A71ADECD48003B33A0 /* settings_selected.png */; };
+		691C35BC1ADECD48003B33A0 /* settings_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 691C35A81ADECD48003B33A0 /* settings_selected@2x.png */; };
+		691C35BD1ADECD48003B33A0 /* tabbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 691C35A91ADECD48003B33A0 /* tabbar.png */; };
+		691C35BE1ADECD48003B33A0 /* tabbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 691C35AA1ADECD48003B33A0 /* tabbar@2x.png */; };
+		691C35BF1ADECD48003B33A0 /* tabbar_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 691C35AB1ADECD48003B33A0 /* tabbar_selected.png */; };
+		691C35C01ADECD48003B33A0 /* tabbar_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 691C35AC1ADECD48003B33A0 /* tabbar_selected@2x.png */; };
 		6955CEB71ADE76B60093E1C8 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6955CEB51ADE76B60093E1C8 /* BaseNavigationController.m */; };
 		6955CEB81ADE76B60093E1C8 /* BaseNavigationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6955CEB61ADE76B60093E1C8 /* BaseNavigationController.xib */; };
 		6955CEBC1ADE76DC0093E1C8 /* BaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6955CEBA1ADE76DC0093E1C8 /* BaseTabBarController.m */; };
 		6955CEBD1ADE76DC0093E1C8 /* BaseTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6955CEBB1ADE76DC0093E1C8 /* BaseTabBarController.xib */; };
-		6955CEBF1ADE7AD50093E1C8 /* BaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6955CEBE1ADE7AD50093E1C8 /* BaseViewController.xib */; };
+		697FB1421ADE9A7700DFE12D /* FunBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 697FB1401ADE9A7700DFE12D /* FunBaseViewController.m */; };
+		697FB1431ADE9A7700DFE12D /* FunBaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 697FB1411ADE9A7700DFE12D /* FunBaseViewController.xib */; };
+		697FB1481ADEA30900DFE12D /* FirstScreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 697FB1461ADEA30900DFE12D /* FirstScreenView.m */; };
+		697FB1491ADEA30900DFE12D /* FirstScreenView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 697FB1471ADEA30900DFE12D /* FirstScreenView.xib */; };
+		697FB14B1ADEA72A00DFE12D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 697FB14A1ADEA72A00DFE12D /* libPods.a */; };
+		697FB1531ADEA9AE00DFE12D /* PlaylistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 697FB1511ADEA9AE00DFE12D /* PlaylistViewController.m */; };
+		697FB1551ADEAB4F00DFE12D /* PlaylistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 697FB1541ADEAB4F00DFE12D /* PlaylistViewController.xib */; };
 		69AB3F4B1ADE1CC200791DAD /* iphone_home_1_green.png in Resources */ = {isa = PBXBuildFile; fileRef = 69AB3F1B1ADE1CC200791DAD /* iphone_home_1_green.png */; };
 		69AB3F4C1ADE1CC200791DAD /* iphone_home_1_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 69AB3F1C1ADE1CC200791DAD /* iphone_home_1_off.png */; };
 		69AB3F4D1ADE1CC200791DAD /* iphone_home_1_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 69AB3F1D1ADE1CC200791DAD /* iphone_home_1_red.png */; };
@@ -93,21 +117,49 @@
 		6915C7D71ADE05E4005AD7E1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6915C7D91ADE05E4005AD7E1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6915C7DA1ADE05E4005AD7E1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		6915C7DC1ADE05E4005AD7E1 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
-		6915C7DD1ADE05E4005AD7E1 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
-		6915C7E01ADE05E4005AD7E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6915C7E21ADE05E4005AD7E1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6915C7E51ADE05E4005AD7E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		6915C7EB1ADE05E4005AD7E1 /* Funny ClipTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Funny ClipTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6915C7F01ADE05E4005AD7E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6915C7F11ADE05E4005AD7E1 /* Funny_ClipTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Funny_ClipTests.m; sourceTree = "<group>"; };
+		691C35961ADEC02D003B33A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		691C35991ADECD48003B33A0 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
+		691C359A1ADECD48003B33A0 /* home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home@2x.png"; sourceTree = "<group>"; };
+		691C359B1ADECD48003B33A0 /* home_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_selected.png; sourceTree = "<group>"; };
+		691C359C1ADECD48003B33A0 /* home_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_selected@2x.png"; sourceTree = "<group>"; };
+		691C359D1ADECD48003B33A0 /* maps.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maps.png; sourceTree = "<group>"; };
+		691C359E1ADECD48003B33A0 /* maps@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "maps@2x.png"; sourceTree = "<group>"; };
+		691C359F1ADECD48003B33A0 /* maps_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maps_selected.png; sourceTree = "<group>"; };
+		691C35A01ADECD48003B33A0 /* maps_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "maps_selected@2x.png"; sourceTree = "<group>"; };
+		691C35A11ADECD48003B33A0 /* myplan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = myplan.png; sourceTree = "<group>"; };
+		691C35A21ADECD48003B33A0 /* myplan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "myplan@2x.png"; sourceTree = "<group>"; };
+		691C35A31ADECD48003B33A0 /* myplan_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = myplan_selected.png; sourceTree = "<group>"; };
+		691C35A41ADECD48003B33A0 /* myplan_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "myplan_selected@2x.png"; sourceTree = "<group>"; };
+		691C35A51ADECD48003B33A0 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		691C35A61ADECD48003B33A0 /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
+		691C35A71ADECD48003B33A0 /* settings_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings_selected.png; sourceTree = "<group>"; };
+		691C35A81ADECD48003B33A0 /* settings_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings_selected@2x.png"; sourceTree = "<group>"; };
+		691C35A91ADECD48003B33A0 /* tabbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar.png; sourceTree = "<group>"; };
+		691C35AA1ADECD48003B33A0 /* tabbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar@2x.png"; sourceTree = "<group>"; };
+		691C35AB1ADECD48003B33A0 /* tabbar_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_selected.png; sourceTree = "<group>"; };
+		691C35AC1ADECD48003B33A0 /* tabbar_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_selected@2x.png"; sourceTree = "<group>"; };
 		6955CEB41ADE76B60093E1C8 /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
 		6955CEB51ADE76B60093E1C8 /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
 		6955CEB61ADE76B60093E1C8 /* BaseNavigationController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseNavigationController.xib; sourceTree = "<group>"; };
 		6955CEB91ADE76DC0093E1C8 /* BaseTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTabBarController.h; sourceTree = "<group>"; };
 		6955CEBA1ADE76DC0093E1C8 /* BaseTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTabBarController.m; sourceTree = "<group>"; };
 		6955CEBB1ADE76DC0093E1C8 /* BaseTabBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseTabBarController.xib; sourceTree = "<group>"; };
-		6955CEBE1ADE7AD50093E1C8 /* BaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseViewController.xib; sourceTree = "<group>"; };
+		697FB13F1ADE9A7700DFE12D /* FunBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FunBaseViewController.h; sourceTree = "<group>"; };
+		697FB1401ADE9A7700DFE12D /* FunBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FunBaseViewController.m; sourceTree = "<group>"; };
+		697FB1411ADE9A7700DFE12D /* FunBaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FunBaseViewController.xib; sourceTree = "<group>"; };
+		697FB1451ADEA30900DFE12D /* FirstScreenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstScreenView.h; sourceTree = "<group>"; };
+		697FB1461ADEA30900DFE12D /* FirstScreenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstScreenView.m; sourceTree = "<group>"; };
+		697FB1471ADEA30900DFE12D /* FirstScreenView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FirstScreenView.xib; sourceTree = "<group>"; };
+		697FB14A1ADEA72A00DFE12D /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/../build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
+		697FB14C1ADEA73500DFE12D /* libPods-Funny Clip.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Funny Clip.a"; path = "Pods/../build/Debug-iphoneos/libPods-Funny Clip.a"; sourceTree = "<group>"; };
+		697FB1501ADEA9AE00DFE12D /* PlaylistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistViewController.h; sourceTree = "<group>"; };
+		697FB1511ADEA9AE00DFE12D /* PlaylistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistViewController.m; sourceTree = "<group>"; };
+		697FB1541ADEAB4F00DFE12D /* PlaylistViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaylistViewController.xib; sourceTree = "<group>"; };
 		69AB3F1B1ADE1CC200791DAD /* iphone_home_1_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphone_home_1_green.png; sourceTree = "<group>"; };
 		69AB3F1C1ADE1CC200791DAD /* iphone_home_1_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphone_home_1_off.png; sourceTree = "<group>"; };
 		69AB3F1D1ADE1CC200791DAD /* iphone_home_1_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphone_home_1_red.png; sourceTree = "<group>"; };
@@ -171,7 +223,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				384A88CCBCB7E188EC2376DF /* libPods.a in Frameworks */,
+				697FB14B1ADEA72A00DFE12D /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,16 +261,12 @@
 		6915C7D41ADE05E4005AD7E1 /* Funny Clip */ = {
 			isa = PBXGroup;
 			children = (
+				697FB1441ADEA2B000DFE12D /* AllViewController */,
 				69AB3F141ADE19FB00791DAD /* CustomView */,
 				69AB3F0E1ADE185500791DAD /* BaseCustom */,
-				6915C7D91ADE05E4005AD7E1 /* AppDelegate.h */,
-				6915C7DA1ADE05E4005AD7E1 /* AppDelegate.m */,
-				6915C7DC1ADE05E4005AD7E1 /* BaseViewController.h */,
-				6915C7DD1ADE05E4005AD7E1 /* BaseViewController.m */,
-				6955CEBE1ADE7AD50093E1C8 /* BaseViewController.xib */,
-				6915C7DF1ADE05E4005AD7E1 /* Main.storyboard */,
 				6915C7E21ADE05E4005AD7E1 /* Images.xcassets */,
 				6915C7E41ADE05E4005AD7E1 /* LaunchScreen.xib */,
+				691C35951ADEC02D003B33A0 /* Main.storyboard */,
 				6915C7D51ADE05E4005AD7E1 /* Supporting Files */,
 			);
 			path = "Funny Clip";
@@ -250,15 +298,60 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		691C35981ADECD48003B33A0 /* tabbarimages */ = {
+			isa = PBXGroup;
+			children = (
+				691C35991ADECD48003B33A0 /* home.png */,
+				691C359A1ADECD48003B33A0 /* home@2x.png */,
+				691C359B1ADECD48003B33A0 /* home_selected.png */,
+				691C359C1ADECD48003B33A0 /* home_selected@2x.png */,
+				691C359D1ADECD48003B33A0 /* maps.png */,
+				691C359E1ADECD48003B33A0 /* maps@2x.png */,
+				691C359F1ADECD48003B33A0 /* maps_selected.png */,
+				691C35A01ADECD48003B33A0 /* maps_selected@2x.png */,
+				691C35A11ADECD48003B33A0 /* myplan.png */,
+				691C35A21ADECD48003B33A0 /* myplan@2x.png */,
+				691C35A31ADECD48003B33A0 /* myplan_selected.png */,
+				691C35A41ADECD48003B33A0 /* myplan_selected@2x.png */,
+				691C35A51ADECD48003B33A0 /* settings.png */,
+				691C35A61ADECD48003B33A0 /* settings@2x.png */,
+				691C35A71ADECD48003B33A0 /* settings_selected.png */,
+				691C35A81ADECD48003B33A0 /* settings_selected@2x.png */,
+				691C35A91ADECD48003B33A0 /* tabbar.png */,
+				691C35AA1ADECD48003B33A0 /* tabbar@2x.png */,
+				691C35AB1ADECD48003B33A0 /* tabbar_selected.png */,
+				691C35AC1ADECD48003B33A0 /* tabbar_selected@2x.png */,
+			);
+			path = tabbarimages;
+			sourceTree = "<group>";
+		};
+		697FB1441ADEA2B000DFE12D /* AllViewController */ = {
+			isa = PBXGroup;
+			children = (
+				697FB1501ADEA9AE00DFE12D /* PlaylistViewController.h */,
+				697FB1511ADEA9AE00DFE12D /* PlaylistViewController.m */,
+				697FB1541ADEAB4F00DFE12D /* PlaylistViewController.xib */,
+				697FB1451ADEA30900DFE12D /* FirstScreenView.h */,
+				697FB1461ADEA30900DFE12D /* FirstScreenView.m */,
+				697FB1471ADEA30900DFE12D /* FirstScreenView.xib */,
+			);
+			name = AllViewController;
+			sourceTree = "<group>";
+		};
 		69AB3F0E1ADE185500791DAD /* BaseCustom */ = {
 			isa = PBXGroup;
 			children = (
+				6915C7D91ADE05E4005AD7E1 /* AppDelegate.h */,
+				6915C7DA1ADE05E4005AD7E1 /* AppDelegate.m */,
 				6955CEB41ADE76B60093E1C8 /* BaseNavigationController.h */,
 				6955CEB51ADE76B60093E1C8 /* BaseNavigationController.m */,
 				6955CEB61ADE76B60093E1C8 /* BaseNavigationController.xib */,
 				6955CEB91ADE76DC0093E1C8 /* BaseTabBarController.h */,
 				6955CEBA1ADE76DC0093E1C8 /* BaseTabBarController.m */,
 				6955CEBB1ADE76DC0093E1C8 /* BaseTabBarController.xib */,
+				697FB13F1ADE9A7700DFE12D /* FunBaseViewController.h */,
+				697FB1401ADE9A7700DFE12D /* FunBaseViewController.m */,
+				697FB1411ADE9A7700DFE12D /* FunBaseViewController.xib */,
 			);
 			name = BaseCustom;
 			sourceTree = "<group>";
@@ -273,6 +366,7 @@
 		69AB3F181ADE1CAA00791DAD /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				691C35981ADECD48003B33A0 /* tabbarimages */,
 				69AB3F191ADE1CB700791DAD /* Image */,
 			);
 			name = Resource;
@@ -350,6 +444,8 @@
 		7BE508E6149B342F7B4878B3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				697FB14C1ADEA73500DFE12D /* libPods-Funny Clip.a */,
+				697FB14A1ADEA72A00DFE12D /* libPods.a */,
 				DE4CB76D69A7DC73CF891441 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -448,8 +544,12 @@
 			files = (
 				69AB3F7A1ADE1CC200791DAD /* iphone_home_track_sub.png in Resources */,
 				69AB3F591ADE1CC200791DAD /* iphone_home_6_green.png in Resources */,
+				691C35AD1ADECD48003B33A0 /* home.png in Resources */,
 				69AB3F5F1ADE1CC200791DAD /* iphone_home_8_green.png in Resources */,
+				691C35B01ADECD48003B33A0 /* home_selected@2x.png in Resources */,
 				69AB3F511ADE1CC200791DAD /* iphone_home_3_green.png in Resources */,
+				691C35BE1ADECD48003B33A0 /* tabbar@2x.png in Resources */,
+				691C35B91ADECD48003B33A0 /* settings.png in Resources */,
 				69AB3F791ADE1CC200791DAD /* iphone_home_track_off.png in Resources */,
 				69AB3F641ADE1CC200791DAD /* iphone_home_base.png in Resources */,
 				69AB3F6E1ADE1CC200791DAD /* iphone_home_mixer_off.png in Resources */,
@@ -460,42 +560,57 @@
 				69AB3F671ADE1CC200791DAD /* iphone_home_bluetooth_on.png in Resources */,
 				69AB3F6B1ADE1CC200791DAD /* iphone_home_level_on_yellow.png in Resources */,
 				69AB3F751ADE1CC200791DAD /* iphone_home_stop_off.png in Resources */,
+				691C35B31ADECD48003B33A0 /* maps_selected.png in Resources */,
 				6955CEB81ADE76B60093E1C8 /* BaseNavigationController.xib in Resources */,
-				6915C7E11ADE05E4005AD7E1 /* Main.storyboard in Resources */,
 				69AB3F691ADE1CC200791DAD /* iphone_home_fwd_on.png in Resources */,
+				691C35BF1ADECD48003B33A0 /* tabbar_selected.png in Resources */,
+				691C35AE1ADECD48003B33A0 /* home@2x.png in Resources */,
 				6915C7E61ADE05E4005AD7E1 /* LaunchScreen.xib in Resources */,
 				69AB3F831ADE221100791DAD /* BlueBlock.png in Resources */,
 				6915C7E31ADE05E4005AD7E1 /* Images.xcassets in Resources */,
 				69AB3F4F1ADE1CC200791DAD /* iphone_home_2_off.png in Resources */,
-				6955CEBF1ADE7AD50093E1C8 /* BaseViewController.xib in Resources */,
 				69AB3F4B1ADE1CC200791DAD /* iphone_home_1_green.png in Resources */,
 				69AB3F731ADE1CC200791DAD /* iphone_home_play_on.png in Resources */,
 				69AB3F651ADE1CC200791DAD /* iphone_home_battery_off.png in Resources */,
 				69AB3F581ADE1CC200791DAD /* iphone_home_5_red.png in Resources */,
 				69AB3F571ADE1CC200791DAD /* iphone_home_5_off.png in Resources */,
 				69AB3F6D1ADE1CC200791DAD /* iphone_home_menu_on.png in Resources */,
+				691C35B81ADECD48003B33A0 /* myplan_selected@2x.png in Resources */,
+				691C35B71ADECD48003B33A0 /* myplan_selected.png in Resources */,
+				697FB1431ADE9A7700DFE12D /* FunBaseViewController.xib in Resources */,
 				69AB3F6F1ADE1CC200791DAD /* iphone_home_mixer_on.png in Resources */,
 				69AB3F661ADE1CC200791DAD /* iphone_home_battery_on.png in Resources */,
+				691C35B51ADECD48003B33A0 /* myplan.png in Resources */,
+				691C35971ADEC02D003B33A0 /* Main.storyboard in Resources */,
 				69AB3F721ADE1CC200791DAD /* iphone_home_play_off.png in Resources */,
 				69AB3F711ADE1CC200791DAD /* iphone_home_pfl_on.png in Resources */,
 				69AB3F621ADE1CC200791DAD /* iphone_home_back_off.png in Resources */,
 				69AB3F5A1ADE1CC200791DAD /* iphone_home_6_off.png in Resources */,
 				69AB3F5B1ADE1CC200791DAD /* iphone_home_6_red.png in Resources */,
 				69AB3F821ADE221100791DAD /* Button_crystal.png in Resources */,
+				691C35BC1ADECD48003B33A0 /* settings_selected@2x.png in Resources */,
 				69AB3F501ADE1CC200791DAD /* iphone_home_2_red.png in Resources */,
 				69AB3F5C1ADE1CC200791DAD /* iphone_home_7_green.png in Resources */,
 				69AB3F631ADE1CC200791DAD /* iphone_home_back_on.png in Resources */,
 				69AB3F541ADE1CC200791DAD /* iphone_home_4_off.png in Resources */,
+				697FB1551ADEAB4F00DFE12D /* PlaylistViewController.xib in Resources */,
 				69AB3F561ADE1CC200791DAD /* iphone_home_5_green.png in Resources */,
+				691C35C01ADECD48003B33A0 /* tabbar_selected@2x.png in Resources */,
+				691C35BD1ADECD48003B33A0 /* tabbar.png in Resources */,
 				69AB3F4C1ADE1CC200791DAD /* iphone_home_1_off.png in Resources */,
 				69AB3F531ADE1CC200791DAD /* iphone_home_4_green.png in Resources */,
+				691C35B41ADECD48003B33A0 /* maps_selected@2x.png in Resources */,
+				691C35BA1ADECD48003B33A0 /* settings@2x.png in Resources */,
 				69AB3F4E1ADE1CC200791DAD /* iphone_home_2_green.png in Resources */,
+				691C35B61ADECD48003B33A0 /* myplan@2x.png in Resources */,
 				69AB3F701ADE1CC200791DAD /* iphone_home_pfl_off.png in Resources */,
 				69AB3F5E1ADE1CC200791DAD /* iphone_home_7_red.png in Resources */,
 				69AB3F6C1ADE1CC200791DAD /* iphone_home_menu_off.png in Resources */,
 				69AB3F5D1ADE1CC200791DAD /* iphone_home_7_off.png in Resources */,
+				691C35B11ADECD48003B33A0 /* maps.png in Resources */,
 				69AB3F681ADE1CC200791DAD /* iphone_home_fwd_off.png in Resources */,
 				69AB3F4D1ADE1CC200791DAD /* iphone_home_1_red.png in Resources */,
+				691C35BB1ADECD48003B33A0 /* settings_selected.png in Resources */,
 				69AB3F521ADE1CC200791DAD /* iphone_home_3_off.png in Resources */,
 				69AB3F551ADE1CC200791DAD /* iphone_home_4_red.png in Resources */,
 				69AB3F861ADE221100791DAD /* Purple.png in Resources */,
@@ -506,6 +621,9 @@
 				69AB3F811ADE221100791DAD /* ViewBackground.png in Resources */,
 				69AB3F6A1ADE1CC200791DAD /* iphone_home_level_on_red.png in Resources */,
 				69AB3F851ADE221100791DAD /* Button.png in Resources */,
+				691C35B21ADECD48003B33A0 /* maps@2x.png in Resources */,
+				691C35AF1ADECD48003B33A0 /* home_selected.png in Resources */,
+				697FB1491ADEA30900DFE12D /* FirstScreenView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,9 +676,11 @@
 			files = (
 				6955CEBC1ADE76DC0093E1C8 /* BaseTabBarController.m in Sources */,
 				6955CEB71ADE76B60093E1C8 /* BaseNavigationController.m in Sources */,
-				6915C7DE1ADE05E4005AD7E1 /* BaseViewController.m in Sources */,
+				697FB1421ADE9A7700DFE12D /* FunBaseViewController.m in Sources */,
+				697FB1531ADEA9AE00DFE12D /* PlaylistViewController.m in Sources */,
 				6915C7DB1ADE05E4005AD7E1 /* AppDelegate.m in Sources */,
 				6915C7D81ADE05E4005AD7E1 /* main.m in Sources */,
+				697FB1481ADEA30900DFE12D /* FirstScreenView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,20 +703,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		6915C7DF1ADE05E4005AD7E1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6915C7E01ADE05E4005AD7E1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		6915C7E41ADE05E4005AD7E1 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				6915C7E51ADE05E4005AD7E1 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		691C35951ADEC02D003B33A0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				691C35961ADEC02D003B33A0 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -688,7 +808,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Funny Clip/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -699,7 +824,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Funny Clip/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

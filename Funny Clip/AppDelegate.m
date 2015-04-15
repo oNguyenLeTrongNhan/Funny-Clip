@@ -21,9 +21,16 @@
     // Override point for customization after application launch.
     self.navigationController = [[BaseNavigationController alloc] init];
     self.tabBarController = [[BaseTabBarController alloc] init];
-    self.window.rootViewController = self.navigationController;
+  //  self.window.rootViewController = self.navigationController;
+    UINavigationController *newNavi;
+    [newNavi init];
     [self.window makeKeyAndVisible];
+    NSArray* controllers = [NSArray arrayWithObjects:self.navigationController,newNavi, nil];
+    self.tabBarController.viewControllers = controllers;
     
+    self.window.rootViewController = self.tabBarController;
+   // [self.tabBarController ];
+
     return YES;
 }
 

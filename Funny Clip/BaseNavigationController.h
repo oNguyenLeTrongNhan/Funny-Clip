@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BaseViewController.h"
+#import "FunBaseViewController.h"
+#import "FirstScreenView.h"
+#import "PlaylistViewController.h"
 @interface BaseNavigationController : UINavigationController
 
-@property (retain) BaseViewController* baseViewController;
+@property (retain) FunBaseViewController* baseViewController;
+@property (retain) FirstScreenView* firstScreenViewController;
+@property (retain) PlaylistViewController* playListViewController;
+@property (weak, nonatomic) IBOutlet UIButton *leftbtn;
 
 @end
