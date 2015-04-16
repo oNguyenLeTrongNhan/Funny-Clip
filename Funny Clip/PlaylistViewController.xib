@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlaylistViewController">
             <connections>
+                <outlet property="dragSourceView" destination="PhF-3s-YPB" id="KBY-Rz-g9T"/>
+                <outlet property="dropTargetView" destination="HeN-41-uLl" id="02L-28-Ctd"/>
                 <outlet property="nextVideoButton" destination="ug0-qk-zhX" id="Sg6-xZ-I2l"/>
                 <outlet property="pauseButton" destination="thq-fE-YYO" id="41d-Jg-RbJ"/>
                 <outlet property="playButton" destination="6q2-FD-UOG" id="Or3-9e-y4c"/>
@@ -33,7 +35,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="thq-fE-YYO">
-                    <rect key="frame" x="61" y="236" width="60" height="36"/>
+                    <rect key="frame" x="61" y="240" width="60" height="36"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Button">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -42,18 +44,8 @@
                         <action selector="buttonPressed:" destination="-1" eventType="touchUpInside" id="nE3-DV-Iqb"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ug0-qk-zhX">
-                    <rect key="frame" x="123" y="239" width="63" height="33"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Button">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="buttonPressed:" destination="-1" eventType="touchUpInside" id="Erx-rE-S9e"/>
-                    </connections>
-                </button>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="bhjvh" id="o9I-Dn-Nd0">
-                    <rect key="frame" x="68" y="426" width="201" height="50"/>
+                    <rect key="frame" x="68" y="320" width="201" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -69,11 +61,6 @@
                         <action selector="buttonPressed:" destination="-1" eventType="touchUpInside" id="JQT-ds-Atd"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" id="d72-ie-tMX" customClass="YTPlayerView">
-                    <rect key="frame" x="61" y="28" width="208" height="174"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="J2N-12-KAU">
                     <rect key="frame" x="207" y="244" width="55" height="28"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -84,8 +71,36 @@
                         <action selector="buttonPressed:" destination="-1" eventType="touchUpInside" id="DdF-ns-hkg"/>
                     </connections>
                 </button>
+                <view contentMode="scaleToFill" id="HeN-41-uLl" userLabel="Distination">
+                    <rect key="frame" x="149" y="417" width="157" height="68"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ug0-qk-zhX">
+                    <rect key="frame" x="136" y="244" width="63" height="33"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Button">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="buttonPressed:" destination="-1" eventType="touchUpInside" id="Erx-rE-S9e"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" id="PhF-3s-YPB" userLabel="Source">
+                    <rect key="frame" x="42" y="72" width="237" height="117"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" id="d72-ie-tMX" customClass="YTPlayerView">
+                            <rect key="frame" x="0.0" y="0.0" width="237" height="117"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.15686274510000001" green="0.53333333329999999" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <point key="canvasLocation" x="609" y="154"/>
         </view>
     </objects>

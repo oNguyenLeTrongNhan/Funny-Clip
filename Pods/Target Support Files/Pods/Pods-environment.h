@@ -48,6 +48,12 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking_UIKit 2
 #define COCOAPODS_VERSION_PATCH_AFNetworking_UIKit 1
 
+// DNDDragAndDrop
+#define COCOAPODS_POD_AVAILABLE_DNDDragAndDrop
+#define COCOAPODS_VERSION_MAJOR_DNDDragAndDrop 1
+#define COCOAPODS_VERSION_MINOR_DNDDragAndDrop 1
+#define COCOAPODS_VERSION_PATCH_DNDDragAndDrop 3
+
 // youtube-ios-player-helper
 #define COCOAPODS_POD_AVAILABLE_youtube_ios_player_helper
 #define COCOAPODS_VERSION_MAJOR_youtube_ios_player_helper 0

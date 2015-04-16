@@ -14,23 +14,20 @@
 
 @implementation BaseNavigationController
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
        CGRect screenSize = [UIScreen mainScreen].bounds;
   
-//    self.baseViewController = [[FunBaseViewController alloc] initWithNibName:@"FunBaseViewController" bundle:nil];
-//      self.baseViewController.delegate = self;
-//        [self pushViewController:_baseViewController animated:NO];
-    //---------
-//    self.firstScreenViewController = [[FirstScreenView alloc] initWithNibName:@"FirstScreenView" bundle:nil];
-//    self.firstScreenViewController.delegate = self;
-//    [self pushViewController:self.firstScreenViewController animated:NO];
+        //    self.baseViewController = [[FunBaseViewController alloc] initWithNibName:@"FunBaseViewController" bundle:nil];
+        //    self.baseViewController.delegate = self;
+        //    [self pushViewController:_baseViewController animated:NO];
 
-    self.playListViewController = [[PlaylistViewController alloc] initWithNibName:@"PlaylistViewController" bundle:nil];
-    self.playListViewController.delegate = self;
-    [self pushViewController:self.playListViewController animated:NO];
-    
+        self.playListViewController = [[PlaylistViewController alloc] initWithNibName:@"PlaylistViewController" bundle:nil];
+        self.playListViewController.delegate = self;
+        [self pushViewController:self.playListViewController animated:YES];
     
 }
 

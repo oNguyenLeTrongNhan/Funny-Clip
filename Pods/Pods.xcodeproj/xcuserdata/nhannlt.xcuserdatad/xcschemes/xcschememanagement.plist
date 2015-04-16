@@ -9,7 +9,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-DNDDragAndDrop.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Funny Clip-AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Funny Clip-DNDDragAndDrop.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -25,6 +35,11 @@
 			<false/>
 		</dict>
 		<key>Pods-Funny ClipTests-AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Funny ClipTests-DNDDragAndDrop.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -52,47 +67,62 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1D4650A051868A3CD297323D</key>
+		<key>0F4EEDC2CA6AC5709178A0AA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1F758C3FD45A578CE338AE98</key>
+		<key>490702B02D0890BC8B4CBE56</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>848BD060A7AAAC86B2C8DB11</key>
+		<key>4AB627704A99111662679B62</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>997F16F466BAEB4B6AE980BE</key>
+		<key>4ECD23FCBBAA546D94CC7960</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BD4C592B62B80DF2E0702A00</key>
+		<key>592BE50F045AE279041BD75A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DF23E304438A6379C9CDA3DC</key>
+		<key>682BDC1A9BC64305953117A4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E8FDC252125E837AEB9944FA</key>
+		<key>697E2B010EE7352AF435AE95</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EB5F29B0946EEF80E863B2BE</key>
+		<key>7E7B817761B7B2C94FF0E362</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FC9E2533F8332D8A34AEA8BF</key>
+		<key>87BA8DFB2EA2378BB002F96A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9582670EBC5B626C581FF216</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9F01ADD870FB34C90D27CD86</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B1A38B741857424F0A165BE9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

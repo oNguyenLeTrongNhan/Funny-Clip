@@ -14,10 +14,12 @@
 
 #import "YTPlayerView.h"
 #import "FunBaseViewController.h"
+#import <DNDDragAndDropController.h>
+#import <DNDDragAndDrop/DNDDragAndDrop.h>
 @protocol PlaylistViewControllerDelegate <NSObject>;
 @end;
 
-@interface PlaylistViewController : FunBaseViewController
+@interface PlaylistViewController : FunBaseViewController<DNDDragSourceDelegate, DNDDropTargetDelegate>
 
 @property(nonatomic, strong) IBOutlet YTPlayerView *playerView;
 @property(nonatomic, weak) IBOutlet UIButton *playButton;
@@ -28,5 +30,9 @@
 @property(nonatomic, weak) IBOutlet UITextView *statusTextView;
 
 - (IBAction)buttonPressed:(id)sender;
+
+@property (nonatomic, weak) IBOutlet UIView *dragSourceView;
+@property (nonatomic, weak) IBOutlet UIView  *dropTargetView;
+@property (nonatomic, strong) IBOutlet DNDDragAndDropController *dragAndDropController;
 @property (retain) id<PlaylistViewControllerDelegate> delegate;
 @end

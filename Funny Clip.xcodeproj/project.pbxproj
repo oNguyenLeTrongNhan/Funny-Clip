@@ -44,6 +44,21 @@
 		697FB14B1ADEA72A00DFE12D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 697FB14A1ADEA72A00DFE12D /* libPods.a */; };
 		697FB1531ADEA9AE00DFE12D /* PlaylistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 697FB1511ADEA9AE00DFE12D /* PlaylistViewController.m */; };
 		697FB1551ADEAB4F00DFE12D /* PlaylistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 697FB1541ADEAB4F00DFE12D /* PlaylistViewController.xib */; };
+		6999FB521ADF80A300B94D04 /* NMBottomTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6999FB4F1ADF80A300B94D04 /* NMBottomTabBar.m */; };
+		6999FB531ADF80A300B94D04 /* NMBottomTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6999FB511ADF80A300B94D04 /* NMBottomTabBarController.m */; };
+		6999FB611ADF811700B94D04 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 6999FB541ADF811700B94D04 /* home.png */; };
+		6999FB621ADF811700B94D04 /* home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6999FB551ADF811700B94D04 /* home@2x.png */; };
+		6999FB631ADF811700B94D04 /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 6999FB561ADF811700B94D04 /* calendar.png */; };
+		6999FB641ADF811700B94D04 /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 6999FB571ADF811700B94D04 /* profile.png */; };
+		6999FB651ADF811700B94D04 /* profile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6999FB581ADF811700B94D04 /* profile@2x.png */; };
+		6999FB661ADF811700B94D04 /* selected.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6999FB591ADF811700B94D04 /* selected.jpeg */; };
+		6999FB671ADF811700B94D04 /* selected@2x.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6999FB5A1ADF811700B94D04 /* selected@2x.jpeg */; };
+		6999FB681ADF811700B94D04 /* separator.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6999FB5B1ADF811700B94D04 /* separator.jpg */; };
+		6999FB691ADF811700B94D04 /* separator@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6999FB5C1ADF811700B94D04 /* separator@2x.jpg */; };
+		6999FB6A1ADF811700B94D04 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 6999FB5D1ADF811700B94D04 /* settings.png */; };
+		6999FB6B1ADF811700B94D04 /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6999FB5E1ADF811700B94D04 /* settings@2x.png */; };
+		6999FB6C1ADF811700B94D04 /* unselected.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6999FB5F1ADF811700B94D04 /* unselected.jpeg */; };
+		6999FB6D1ADF811700B94D04 /* unselected@2x.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6999FB601ADF811700B94D04 /* unselected@2x.jpeg */; };
 		69AB3F4B1ADE1CC200791DAD /* iphone_home_1_green.png in Resources */ = {isa = PBXBuildFile; fileRef = 69AB3F1B1ADE1CC200791DAD /* iphone_home_1_green.png */; };
 		69AB3F4C1ADE1CC200791DAD /* iphone_home_1_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 69AB3F1C1ADE1CC200791DAD /* iphone_home_1_off.png */; };
 		69AB3F4D1ADE1CC200791DAD /* iphone_home_1_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 69AB3F1D1ADE1CC200791DAD /* iphone_home_1_red.png */; };
@@ -160,6 +175,23 @@
 		697FB1501ADEA9AE00DFE12D /* PlaylistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistViewController.h; sourceTree = "<group>"; };
 		697FB1511ADEA9AE00DFE12D /* PlaylistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistViewController.m; sourceTree = "<group>"; };
 		697FB1541ADEAB4F00DFE12D /* PlaylistViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaylistViewController.xib; sourceTree = "<group>"; };
+		6999FB4E1ADF80A300B94D04 /* NMBottomTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMBottomTabBar.h; sourceTree = "<group>"; };
+		6999FB4F1ADF80A300B94D04 /* NMBottomTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMBottomTabBar.m; sourceTree = "<group>"; };
+		6999FB501ADF80A300B94D04 /* NMBottomTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMBottomTabBarController.h; sourceTree = "<group>"; };
+		6999FB511ADF80A300B94D04 /* NMBottomTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMBottomTabBarController.m; sourceTree = "<group>"; };
+		6999FB541ADF811700B94D04 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
+		6999FB551ADF811700B94D04 /* home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home@2x.png"; sourceTree = "<group>"; };
+		6999FB561ADF811700B94D04 /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
+		6999FB571ADF811700B94D04 /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
+		6999FB581ADF811700B94D04 /* profile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile@2x.png"; sourceTree = "<group>"; };
+		6999FB591ADF811700B94D04 /* selected.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = selected.jpeg; sourceTree = "<group>"; };
+		6999FB5A1ADF811700B94D04 /* selected@2x.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "selected@2x.jpeg"; sourceTree = "<group>"; };
+		6999FB5B1ADF811700B94D04 /* separator.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = separator.jpg; sourceTree = "<group>"; };
+		6999FB5C1ADF811700B94D04 /* separator@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "separator@2x.jpg"; sourceTree = "<group>"; };
+		6999FB5D1ADF811700B94D04 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		6999FB5E1ADF811700B94D04 /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
+		6999FB5F1ADF811700B94D04 /* unselected.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = unselected.jpeg; sourceTree = "<group>"; };
+		6999FB601ADF811700B94D04 /* unselected@2x.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "unselected@2x.jpeg"; sourceTree = "<group>"; };
 		69AB3F1B1ADE1CC200791DAD /* iphone_home_1_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphone_home_1_green.png; sourceTree = "<group>"; };
 		69AB3F1C1ADE1CC200791DAD /* iphone_home_1_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphone_home_1_off.png; sourceTree = "<group>"; };
 		69AB3F1D1ADE1CC200791DAD /* iphone_home_1_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphone_home_1_red.png; sourceTree = "<group>"; };
@@ -359,6 +391,10 @@
 		69AB3F141ADE19FB00791DAD /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				6999FB4E1ADF80A300B94D04 /* NMBottomTabBar.h */,
+				6999FB4F1ADF80A300B94D04 /* NMBottomTabBar.m */,
+				6999FB501ADF80A300B94D04 /* NMBottomTabBarController.h */,
+				6999FB511ADF80A300B94D04 /* NMBottomTabBarController.m */,
 			);
 			name = CustomView;
 			sourceTree = "<group>";
@@ -375,6 +411,19 @@
 		69AB3F191ADE1CB700791DAD /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				6999FB541ADF811700B94D04 /* home.png */,
+				6999FB551ADF811700B94D04 /* home@2x.png */,
+				6999FB561ADF811700B94D04 /* calendar.png */,
+				6999FB571ADF811700B94D04 /* profile.png */,
+				6999FB581ADF811700B94D04 /* profile@2x.png */,
+				6999FB591ADF811700B94D04 /* selected.jpeg */,
+				6999FB5A1ADF811700B94D04 /* selected@2x.jpeg */,
+				6999FB5B1ADF811700B94D04 /* separator.jpg */,
+				6999FB5C1ADF811700B94D04 /* separator@2x.jpg */,
+				6999FB5D1ADF811700B94D04 /* settings.png */,
+				6999FB5E1ADF811700B94D04 /* settings@2x.png */,
+				6999FB5F1ADF811700B94D04 /* unselected.jpeg */,
+				6999FB601ADF811700B94D04 /* unselected@2x.jpeg */,
 				69AB3F7B1ADE221100791DAD /* ViewBackground.png */,
 				69AB3F7C1ADE221100791DAD /* Button_crystal.png */,
 				69AB3F7D1ADE221100791DAD /* BlueBlock.png */,
@@ -547,6 +596,7 @@
 				691C35AD1ADECD48003B33A0 /* home.png in Resources */,
 				69AB3F5F1ADE1CC200791DAD /* iphone_home_8_green.png in Resources */,
 				691C35B01ADECD48003B33A0 /* home_selected@2x.png in Resources */,
+				6999FB621ADF811700B94D04 /* home@2x.png in Resources */,
 				69AB3F511ADE1CC200791DAD /* iphone_home_3_green.png in Resources */,
 				691C35BE1ADECD48003B33A0 /* tabbar@2x.png in Resources */,
 				691C35B91ADECD48003B33A0 /* settings.png in Resources */,
@@ -561,6 +611,7 @@
 				69AB3F6B1ADE1CC200791DAD /* iphone_home_level_on_yellow.png in Resources */,
 				69AB3F751ADE1CC200791DAD /* iphone_home_stop_off.png in Resources */,
 				691C35B31ADECD48003B33A0 /* maps_selected.png in Resources */,
+				6999FB6A1ADF811700B94D04 /* settings.png in Resources */,
 				6955CEB81ADE76B60093E1C8 /* BaseNavigationController.xib in Resources */,
 				69AB3F691ADE1CC200791DAD /* iphone_home_fwd_on.png in Resources */,
 				691C35BF1ADECD48003B33A0 /* tabbar_selected.png in Resources */,
@@ -571,6 +622,7 @@
 				69AB3F4F1ADE1CC200791DAD /* iphone_home_2_off.png in Resources */,
 				69AB3F4B1ADE1CC200791DAD /* iphone_home_1_green.png in Resources */,
 				69AB3F731ADE1CC200791DAD /* iphone_home_play_on.png in Resources */,
+				6999FB6B1ADF811700B94D04 /* settings@2x.png in Resources */,
 				69AB3F651ADE1CC200791DAD /* iphone_home_battery_off.png in Resources */,
 				69AB3F581ADE1CC200791DAD /* iphone_home_5_red.png in Resources */,
 				69AB3F571ADE1CC200791DAD /* iphone_home_5_off.png in Resources */,
@@ -583,27 +635,34 @@
 				691C35B51ADECD48003B33A0 /* myplan.png in Resources */,
 				691C35971ADEC02D003B33A0 /* Main.storyboard in Resources */,
 				69AB3F721ADE1CC200791DAD /* iphone_home_play_off.png in Resources */,
+				6999FB661ADF811700B94D04 /* selected.jpeg in Resources */,
 				69AB3F711ADE1CC200791DAD /* iphone_home_pfl_on.png in Resources */,
 				69AB3F621ADE1CC200791DAD /* iphone_home_back_off.png in Resources */,
 				69AB3F5A1ADE1CC200791DAD /* iphone_home_6_off.png in Resources */,
 				69AB3F5B1ADE1CC200791DAD /* iphone_home_6_red.png in Resources */,
 				69AB3F821ADE221100791DAD /* Button_crystal.png in Resources */,
+				6999FB641ADF811700B94D04 /* profile.png in Resources */,
 				691C35BC1ADECD48003B33A0 /* settings_selected@2x.png in Resources */,
 				69AB3F501ADE1CC200791DAD /* iphone_home_2_red.png in Resources */,
 				69AB3F5C1ADE1CC200791DAD /* iphone_home_7_green.png in Resources */,
 				69AB3F631ADE1CC200791DAD /* iphone_home_back_on.png in Resources */,
 				69AB3F541ADE1CC200791DAD /* iphone_home_4_off.png in Resources */,
+				6999FB651ADF811700B94D04 /* profile@2x.png in Resources */,
 				697FB1551ADEAB4F00DFE12D /* PlaylistViewController.xib in Resources */,
+				6999FB671ADF811700B94D04 /* selected@2x.jpeg in Resources */,
 				69AB3F561ADE1CC200791DAD /* iphone_home_5_green.png in Resources */,
 				691C35C01ADECD48003B33A0 /* tabbar_selected@2x.png in Resources */,
 				691C35BD1ADECD48003B33A0 /* tabbar.png in Resources */,
 				69AB3F4C1ADE1CC200791DAD /* iphone_home_1_off.png in Resources */,
+				6999FB631ADF811700B94D04 /* calendar.png in Resources */,
 				69AB3F531ADE1CC200791DAD /* iphone_home_4_green.png in Resources */,
 				691C35B41ADECD48003B33A0 /* maps_selected@2x.png in Resources */,
 				691C35BA1ADECD48003B33A0 /* settings@2x.png in Resources */,
+				6999FB691ADF811700B94D04 /* separator@2x.jpg in Resources */,
 				69AB3F4E1ADE1CC200791DAD /* iphone_home_2_green.png in Resources */,
 				691C35B61ADECD48003B33A0 /* myplan@2x.png in Resources */,
 				69AB3F701ADE1CC200791DAD /* iphone_home_pfl_off.png in Resources */,
+				6999FB6C1ADF811700B94D04 /* unselected.jpeg in Resources */,
 				69AB3F5E1ADE1CC200791DAD /* iphone_home_7_red.png in Resources */,
 				69AB3F6C1ADE1CC200791DAD /* iphone_home_menu_off.png in Resources */,
 				69AB3F5D1ADE1CC200791DAD /* iphone_home_7_off.png in Resources */,
@@ -611,6 +670,7 @@
 				69AB3F681ADE1CC200791DAD /* iphone_home_fwd_off.png in Resources */,
 				69AB3F4D1ADE1CC200791DAD /* iphone_home_1_red.png in Resources */,
 				691C35BB1ADECD48003B33A0 /* settings_selected.png in Resources */,
+				6999FB681ADF811700B94D04 /* separator.jpg in Resources */,
 				69AB3F521ADE1CC200791DAD /* iphone_home_3_off.png in Resources */,
 				69AB3F551ADE1CC200791DAD /* iphone_home_4_red.png in Resources */,
 				69AB3F861ADE221100791DAD /* Purple.png in Resources */,
@@ -620,8 +680,10 @@
 				6955CEBD1ADE76DC0093E1C8 /* BaseTabBarController.xib in Resources */,
 				69AB3F811ADE221100791DAD /* ViewBackground.png in Resources */,
 				69AB3F6A1ADE1CC200791DAD /* iphone_home_level_on_red.png in Resources */,
+				6999FB611ADF811700B94D04 /* home.png in Resources */,
 				69AB3F851ADE221100791DAD /* Button.png in Resources */,
 				691C35B21ADECD48003B33A0 /* maps@2x.png in Resources */,
+				6999FB6D1ADF811700B94D04 /* unselected@2x.jpeg in Resources */,
 				691C35AF1ADECD48003B33A0 /* home_selected.png in Resources */,
 				697FB1491ADEA30900DFE12D /* FirstScreenView.xib in Resources */,
 			);
@@ -680,7 +742,9 @@
 				697FB1531ADEA9AE00DFE12D /* PlaylistViewController.m in Sources */,
 				6915C7DB1ADE05E4005AD7E1 /* AppDelegate.m in Sources */,
 				6915C7D81ADE05E4005AD7E1 /* main.m in Sources */,
+				6999FB531ADF80A300B94D04 /* NMBottomTabBarController.m in Sources */,
 				697FB1481ADEA30900DFE12D /* FirstScreenView.m in Sources */,
+				6999FB521ADF80A300B94D04 /* NMBottomTabBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

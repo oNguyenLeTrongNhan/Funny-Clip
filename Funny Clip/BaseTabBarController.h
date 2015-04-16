@@ -10,7 +10,9 @@
 #import "FunBaseViewController.h"
 @interface BaseTabBarController : UITabBarController
 
-@property (weak, nonatomic) IBOutlet UITabBar *tabbar;
+
 @property (weak, nonatomic) IBOutlet UITabBarItem *item1;
+
+@property (strong, nonatomic) IBOutlet UITabBar *tabbars;
 @property (retain) FunBaseViewController* baseViewController;
 @end

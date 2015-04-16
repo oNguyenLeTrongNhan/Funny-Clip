@@ -14,6 +14,7 @@
 
 #import "PlaylistViewController.h"
 
+
 @implementation PlaylistViewController
 
 - (void)viewDidLoad {
@@ -22,7 +23,7 @@
  
     
     [super setTitleNavigationBar];
-  NSString* playlistId = @"PLhBgTdAWkxeCMHYCQ0uuLyhydRJGDRNo5";
+    NSString* playlistId = @"PLhBgTdAWkxeCMHYCQ0uuLyhydRJGDRNo5";
 
   // For a full list of player parameters, see the documentation for the HTML5 player
   // at: https://developers.google.com/youtube/player_parameters?playerVersion=HTML5
@@ -34,13 +35,19 @@
     @"modestbranding" : @1
   };
   self.playerView.delegate = self;
-
+ 
   [self.playerView loadWithPlaylistId:playlistId playerVars:playerVars];
 
   [[NSNotificationCenter defaultCenter] addObserver:self
                                            selector:@selector(receivedPlaybackStartedNotification:)
                                                name:@"Playback started"
                                              object:nil];
+    self.dragAndDropController = [[DNDDragAndDropController alloc] init];
+    [self.dragAndDropController registerDragSource:self.dragSourceView withDelegate:self];
+    [self.dragAndDropController registerDropTarget:self.dropTargetView withDelegate:self];
+    
+    [self.dragSourceView setBackgroundColor:[UIColor clearColor]];
+    [self.dropTargetView setBackgroundColor:[UIColor clearColor]];
 }
 
 - (IBAction)buttonPressed:(id)sender {
@@ -79,6 +86,47 @@
   self.statusTextView.scrollEnabled = NO;
   [self.statusTextView scrollRangeToVisible:range];
   self.statusTextView.scrollEnabled = YES;
+}
+#pragma mark - Drag Source Delegate
+
+- (UIView *)draggingViewForDragOperation:(DNDDragOperation *)operation {
+    UIView *dragView = [UIView new];
+    [dragView setFrame:self.playerView.frame];
+    [dragView setBackgroundColor:[UIColor clearColor]];
+    [dragView addSubview:self.playerView];
+    dragView.alpha = 0.0f;
+    [UIView animateWithDuration:0.2 animations:^{
+        dragView.alpha = 1.0f;
+    }];
+    return dragView;
+}
+
+- (void)dragOperationWillCancel:(DNDDragOperation *)operation {
+    [operation removeDraggingViewAnimatedWithDuration:0.2 animations:^(UIView *draggingView) {
+        draggingView.alpha = 0.0f;
+        draggingView.center = [operation convertPoint:self.dragSourceView.center fromView:self.view];
+    }];
+}
+
+
+#pragma mark - Drop Target Delegate
+
+- (void)dragOperation:(DNDDragOperation *)operation didDropInDropTarget:(UIView *)target {
+    //target.backgroundColor = operation.draggingView.backgroundColor;
+    target.layer.borderColor = [[UIColor clearColor] CGColor];
+    [self.playerView setFrame:self.dropTargetView.frame];
+    [target addSubview:self.playerView];
+}
+
+- (void)dragOperation:(DNDDragOperation *)operation didEnterDropTarget:(UIView *)target {
+   // target.layer.borderColor = [operation.draggingView.backgroundColor CGColor];
+    [self.dragSourceView setHidden:YES];
+}
+
+- (void)dragOperation:(DNDDragOperation *)operation didLeaveDropTarget:(UIView *)target {
+  //  target.layer.borderColor = [[UIColor whiteColor] CGColor];
+    
+    
 }
 
 @end
