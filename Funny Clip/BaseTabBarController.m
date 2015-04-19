@@ -18,6 +18,7 @@
     [super viewDidLoad];
 //    [self.tabbars setHidden:NO];
 //    [self.item1 setTitle:@"dassa"];
+   
 }
 
 - (void)didReceiveMemoryWarning {

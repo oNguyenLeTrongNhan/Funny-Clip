@@ -74,8 +74,8 @@ NSString static *const kYTPlayerEmbedUrlRegexPattern = @"^http(s)://(www.)youtub
 
   // Mutable copy because we may have been passed an immutable config dictionary.
   NSMutableDictionary *tempPlayerVars = [[NSMutableDictionary alloc] init];
-  [tempPlayerVars setValue:@"playlist" forKey:@"listType"];
-  [tempPlayerVars setValue:playlistId forKey:@"list"];
+  [tempPlayerVars setValue:@"search" forKey:@"listType"];
+  [tempPlayerVars setValue:@"Hoai Linh" forKey:@"list"];
   [tempPlayerVars addEntriesFromDictionary:playerVars];  // No-op if playerVars is null
 
   NSDictionary *playerParams = @{ @"playerVars" : tempPlayerVars };

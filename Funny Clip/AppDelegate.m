@@ -17,32 +17,32 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-  //  self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-   // self.navigationController = [[BaseNavigationController alloc] init];
+    self.navigationController = [[BaseNavigationController alloc] init];
  //  self.tabBarController = [[BaseTabBarController alloc] initWithNibName:@"BaseTabBarController" bundle:nil];
-  // self.window.rootViewController = self.tabBarController;
+   self.window.rootViewController = self.navigationController;
 
 //    
 //   self.window.rootViewController = self.tabBarControllert;
-    BaseNavigationController *oneController = [[BaseNavigationController alloc] init];
-   // oneController.view.backgroundColor = [UIColor greenColor];
-    BaseNavigationController *twoController = [[BaseNavigationController alloc] init];
+//    BaseNavigationController *oneController = [[BaseNavigationController alloc] init];
+//   // oneController.view.backgroundColor = [UIColor greenColor];
+//    BaseNavigationController *twoController = [[BaseNavigationController alloc] init];
   //  twoController.view.backgroundColor = [UIColor blueColor];
    
-    NMBottomTabBarController *tabBarController = (NMBottomTabBarController *) self.window.rootViewController;
-      // self.window.rootViewController = tabBarController;
-    
-    tabBarController.tabBar.separatorImage = [UIImage imageNamed:@"separator.jpg"];
-    
-    tabBarController.controllers = [NSArray arrayWithObjects:oneController,twoController, nil];
-    tabBarController.delegate = self;
-    [tabBarController.tabBar configureTabAtIndex:0 andTitleOrientation :kTitleToRightOfIcon  withUnselectedBackgroundImage:[UIImage imageNamed:@"unselected.jpeg"] selectedBackgroundImage:[UIImage imageNamed:@"selected.jpeg"] iconImage:[UIImage imageNamed:@"home"]  andText:@"Home"andTextFont:[UIFont systemFontOfSize:12.0] andFontColour:[UIColor whiteColor]];
-    [tabBarController.tabBar configureTabAtIndex:1 andTitleOrientation : kTitleToRightOfIcon withUnselectedBackgroundImage:[UIImage imageNamed:@"unselected.jpeg"] selectedBackgroundImage:[UIImage imageNamed:@"selected.jpeg"] iconImage:[UIImage imageNamed:@"profile"]  andText:@"Profile" andTextFont:[UIFont systemFontOfSize:12.0] andFontColour:[UIColor whiteColor]];
-    
-    
-    [tabBarController selectTabAtIndex:0];
- 
+//    NMBottomTabBarController *tabBarController = (NMBottomTabBarController *) self.window.rootViewController;
+//      // self.window.rootViewController = tabBarController;
+//    
+//    tabBarController.tabBar.separatorImage = [UIImage imageNamed:@"separator.jpg"];
+//    
+//    tabBarController.controllers = [NSArray arrayWithObjects:oneController,twoController, nil];
+//    tabBarController.delegate = self;
+//    [tabBarController.tabBar configureTabAtIndex:0 andTitleOrientation :kTitleToRightOfIcon  withUnselectedBackgroundImage:[UIImage imageNamed:@"unselected.jpeg"] selectedBackgroundImage:[UIImage imageNamed:@"selected.jpeg"] iconImage:[UIImage imageNamed:@"home"]  andText:@"Most on Tube"andTextFont:[UIFont systemFontOfSize:12.0] andFontColour:[UIColor whiteColor]];
+//    [tabBarController.tabBar configureTabAtIndex:1 andTitleOrientation : kTitleToRightOfIcon withUnselectedBackgroundImage:[UIImage imageNamed:@"unselected.jpeg"] selectedBackgroundImage:[UIImage imageNamed:@"selected.jpeg"] iconImage:[UIImage imageNamed:@"profile"]  andText:@"Subscribe" andTextFont:[UIFont systemFontOfSize:12.0] andFontColour:[UIColor whiteColor]];
+//    
+//    
+//    [tabBarController selectTabAtIndex:0];
+// 
     
     
     //-----

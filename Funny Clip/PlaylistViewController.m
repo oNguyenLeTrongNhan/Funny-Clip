@@ -19,12 +19,14 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-   
+    [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIInterfaceOrientationLandscapeLeft] forKey:@"orientation"];
  
     
-    [super setTitleNavigationBar];
-    NSString* playlistId = @"PLhBgTdAWkxeCMHYCQ0uuLyhydRJGDRNo5";
-
+    //[super setTitleNavigationBar];
+    
+    [self.navigationController setNavigationBarHidden:YES];
+    NSString* videoID = @"PLy_TpcUT2LZvHD8JXHdJ4oe_UCWRjHB2I";
+    [self.playButton setImage:[UIImage imageNamed:@"stop_on.png"] forState:UIControlStateSelected];
   // For a full list of player parameters, see the documentation for the HTML5 player
   // at: https://developers.google.com/youtube/player_parameters?playerVersion=HTML5
   NSDictionary *playerVars = @{
@@ -36,97 +38,62 @@
   };
   self.playerView.delegate = self;
  
-  [self.playerView loadWithPlaylistId:playlistId playerVars:playerVars];
+  [self.playerView loadWithPlaylistId:videoID playerVars:playerVars];
 
   [[NSNotificationCenter defaultCenter] addObserver:self
                                            selector:@selector(receivedPlaybackStartedNotification:)
                                                name:@"Playback started"
                                              object:nil];
-    self.dragAndDropController = [[DNDDragAndDropController alloc] init];
-    [self.dragAndDropController registerDragSource:self.dragSourceView withDelegate:self];
-    [self.dragAndDropController registerDropTarget:self.dropTargetView withDelegate:self];
-    
-    [self.dragSourceView setBackgroundColor:[UIColor clearColor]];
-    [self.dropTargetView setBackgroundColor:[UIColor clearColor]];
+    [[[self.mTabbar items ] objectAtIndex:0] setTitle:@"das"];
 }
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
+    mVideoCell * cell = [tableView dequeueReusableCellWithIdentifier:@"videoCell"];
+    if (!cell)
+    {
+        [tableView registerNib:[UINib nibWithNibName:@"mVideoCell" bundle:nil] forCellReuseIdentifier:@"videoCell"];
+        cell = [tableView dequeueReusableCellWithIdentifier:@"videoCell"];
+     
+    }
+    VideoInfoModel *mVideoInfo;
+    //[mVideoInfo ];
+  //  [cell initDataWithVideoInfo: ];
+    return cell;
+}
+- (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 4;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+        return self.mListVideo.frame.size.width;
+}
 - (IBAction)buttonPressed:(id)sender {
   if (sender == self.playButton) {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"Playback started" object:self];
-    [self.playerView playVideo];
-  } else if (sender == self.pauseButton) {
-    [self.playerView pauseVideo];
-  } else if (sender == self.stopButton) {
-    [self.playerView stopVideo];
+      if (self.playButton.isSelected) {
+          [self.playerView pauseVideo];
+          [self.playButton setSelected:NO];
+
+      } else {
+          [self.playButton setSelected:YES];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"Playback started" object:self];
+          [self.playerView playVideo];
+      }
   } else if (sender == self.nextVideoButton) {
-    [self appendStatusText:@"Loading next video in playlist\n"];
+    //[self appendStatusText:@"Loading next video in playlist\n"];
     [self.playerView nextVideo];
   } else if (sender == self.previousVideoButton) {
-    [self appendStatusText:@"Loading previous video in playlist\n"];
+    //[self appendStatusText:@"Loading previous video in playlist\n"];
     [self.playerView previousVideo];
   }
 }
 
 - (void)receivedPlaybackStartedNotification:(NSNotification *) notification {
   if([notification.name isEqual:@"Playback started"] && notification.object != self) {
-    [self.playerView pauseVideo];
+    //[self.playerView pauseVideo];
   }
 }
 
-/**
- * Private helper method to add player status in statusTextView and scroll view automatically.
- *
- * @param status a string describing current player state
- */
-- (void)appendStatusText:(NSString*)status {
-  [self.statusTextView setText:[self.statusTextView.text stringByAppendingString:status]];
-  NSRange range = NSMakeRange(self.statusTextView.text.length - 1, 1);
-
-  // To avoid dizzying scrolling on appending latest status.
-  self.statusTextView.scrollEnabled = NO;
-  [self.statusTextView scrollRangeToVisible:range];
-  self.statusTextView.scrollEnabled = YES;
-}
-#pragma mark - Drag Source Delegate
-
-- (UIView *)draggingViewForDragOperation:(DNDDragOperation *)operation {
-    UIView *dragView = [UIView new];
-    [dragView setFrame:self.playerView.frame];
-    [dragView setBackgroundColor:[UIColor clearColor]];
-    [dragView addSubview:self.playerView];
-    dragView.alpha = 0.0f;
-    [UIView animateWithDuration:0.2 animations:^{
-        dragView.alpha = 1.0f;
-    }];
-    return dragView;
-}
-
-- (void)dragOperationWillCancel:(DNDDragOperation *)operation {
-    [operation removeDraggingViewAnimatedWithDuration:0.2 animations:^(UIView *draggingView) {
-        draggingView.alpha = 0.0f;
-        draggingView.center = [operation convertPoint:self.dragSourceView.center fromView:self.view];
-    }];
-}
-
-
-#pragma mark - Drop Target Delegate
-
-- (void)dragOperation:(DNDDragOperation *)operation didDropInDropTarget:(UIView *)target {
-    //target.backgroundColor = operation.draggingView.backgroundColor;
-    target.layer.borderColor = [[UIColor clearColor] CGColor];
-    [self.playerView setFrame:self.dropTargetView.frame];
-    [target addSubview:self.playerView];
-}
-
-- (void)dragOperation:(DNDDragOperation *)operation didEnterDropTarget:(UIView *)target {
-   // target.layer.borderColor = [operation.draggingView.backgroundColor CGColor];
-    [self.dragSourceView setHidden:YES];
-}
-
-- (void)dragOperation:(DNDDragOperation *)operation didLeaveDropTarget:(UIView *)target {
-  //  target.layer.borderColor = [[UIColor whiteColor] CGColor];
-    
-    
-}
 
 @end

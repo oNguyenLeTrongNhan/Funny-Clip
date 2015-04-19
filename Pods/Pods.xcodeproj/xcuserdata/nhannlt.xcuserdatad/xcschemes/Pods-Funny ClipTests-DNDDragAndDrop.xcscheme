@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0F4EEDC2CA6AC5709178A0AA"
+               BlueprintIdentifier = "58644BE9B4BC3C12381CFC81"
                BuildableName = "libPods-Funny ClipTests-DNDDragAndDrop.a"
                BlueprintName = "Pods-Funny ClipTests-DNDDragAndDrop"
                ReferencedContainer = "container:Pods.xcodeproj">
