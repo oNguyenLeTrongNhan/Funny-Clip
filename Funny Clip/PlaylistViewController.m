@@ -13,17 +13,21 @@
 // limitations under the License.
 
 #import "PlaylistViewController.h"
-
-
+#import "JSONHTTPClient.h"
+#import "VideoModel.h"
+#import <UIImageView+AFNetworking.h>
+#import <AFNetworking/AFHTTPRequestOperation.h>
 @implementation PlaylistViewController
-
+- (void)awakeFromNib{
+  
+}
 - (void)viewDidLoad {
   [super viewDidLoad];
     [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIInterfaceOrientationLandscapeLeft] forKey:@"orientation"];
- 
+  // [self.listViewColectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"collectCell"];
     
     //[super setTitleNavigationBar];
-    
+   
     [self.navigationController setNavigationBarHidden:YES];
     NSString* videoID = @"PLy_TpcUT2LZvHD8JXHdJ4oe_UCWRjHB2I";
     [self.playButton setImage:[UIImage imageNamed:@"stop_on.png"] forState:UIControlStateSelected];
@@ -44,8 +48,96 @@
                                            selector:@selector(receivedPlaybackStartedNotification:)
                                                name:@"Playback started"
                                              object:nil];
-    [[[self.mTabbar items ] objectAtIndex:0] setTitle:@"das"];
+    
+
+    NSString* searchCall = [NSString stringWithFormat:@"http://gdata.youtube.com/feeds/api/videos?q=%@&max-results=50&alt=json", @"love"];
+    
+    [JSONHTTPClient getJSONFromURLWithString: searchCall
+                                  completion:^(NSDictionary *json, JSONModelError *err) {
+                                      
+                                      //got JSON back
+                                      NSLog(@"Got JSON from web: %@", json);
+                                      
+                                      if (err) {
+                                          [[[UIAlertView alloc] initWithTitle:@"Error"
+                                                                      message:[err localizedDescription]
+                                                                     delegate:nil
+                                                            cancelButtonTitle:@"Close"
+                                                            otherButtonTitles: nil] show];
+                                          return;
+                                      }
+                                      
+                                      //initialize the models
+                                      mVideos = [VideoModel arrayOfModelsFromDictionaries:
+                                                json[@"feed"][@"entry"]
+                                                ];
+                                      
+                                      if (mVideos) NSLog(@"Loaded successfully models");
+                                      
+                                      //show the videos
+                                      [self showVideos];
+                                      
+                                  }];
 }
+- (void) showVideos {
+    
+    [self.listViewColectionView reloadData];
+    
+}
+#pragma mark - UICollectionView Datasource
+// 1
+- (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section {
+ [view registerNib:[UINib nibWithNibName:@"VideoItemCollectCell" bundle:nil] forCellWithReuseIdentifier:@"collectCell"];
+    return [mVideos count];
+
+}
+// 2
+- (NSInteger)numberOfSectionsInCollectionView: (UICollectionView *)collectionView {
+    return 1;
+}
+// 3
+- (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+   
+    VideoItemCollectCell *cellScroll = [cv dequeueReusableCellWithReuseIdentifier:@"collectCell" forIndexPath:indexPath];
+    if (!cellScroll)
+    {
+        [cv registerNib:[UINib nibWithNibName:@"VideoItemCollectCell" bundle:nil] forCellWithReuseIdentifier:@"collectCell"];
+        cellScroll= [cv dequeueReusableCellWithReuseIdentifier:@"collectCell" forIndexPath:indexPath];
+    }
+  //  NSLog(@"%i",indexPath.row);
+ 
+    VideoModel *mImageBK= [mVideos objectAtIndex:indexPath.row];
+ MediaThumbnail *mThumnail=[mImageBK.thumbnail objectAtIndex:0];
+//    NSURL *url = [NSURL URLWithString:@"http://www.raywenderlich.com/wp-content/uploads/2014/01/sunny-background.png"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:mThumnail.url];
+    
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    operation.responseSerializer = [AFImageResponseSerializer serializer];
+    
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"das");
+        // self.backgroundImageView.image = responseObject;
+        //        [self saveImage:responseObject withFilename:@"background.png"];
+        [cellScroll.thumnailImg setImage:responseObject];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"Error: %@", error);
+    }];
+    
+    [operation start];
+  //  [cellScroll.thumnailImg setImage:[UIImage imageNamed:@"television.png"]];
+        return cellScroll;
+}
+// 4
+/*- (UICollectionReusableView *)collectionView:
+ (UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+ {
+ return [[UICollectionReusableView alloc] init];
+ }*/
+
+
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
     mVideoCell * cell = [tableView dequeueReusableCellWithIdentifier:@"videoCell"];
@@ -55,9 +147,10 @@
         cell = [tableView dequeueReusableCellWithIdentifier:@"videoCell"];
      
     }
-    VideoInfoModel *mVideoInfo;
+   // VideoInfoModel *mVideoInfo;
     //[mVideoInfo ];
   //  [cell initDataWithVideoInfo: ];
+    cell.titleLabel.text=@"daad";
     return cell;
 }
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView{

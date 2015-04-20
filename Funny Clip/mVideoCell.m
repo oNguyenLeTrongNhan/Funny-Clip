@@ -35,5 +35,6 @@
 }
 - (void)initDataWithVideoInfo:(VideoInfoModel *)model {
     [self.titleLabel setText:model.title];
+     // [self.backgroundImage setImage:[UIImage imageNamed:television.png]];
 }
 @end

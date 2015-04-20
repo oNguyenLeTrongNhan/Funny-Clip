@@ -18,14 +18,22 @@
 #import <DNDDragAndDrop/DNDDragAndDrop.h>
 #import "NMBottomTabBarController.h"
 #import "mVideoCell.h"
+#import "VideoItemCollectCell.h"
+//#import "VideoItemCollectCell.m"
 @protocol PlaylistViewControllerDelegate <NSObject>;
 @end;
 
-@interface PlaylistViewController : FunBaseViewController<UITabBarDelegate,UITableViewDataSource,UITableViewDelegate>
+@interface PlaylistViewController : FunBaseViewController<UICollectionViewDataSource,UICollectionViewDelegate, UITabBarDelegate,UITableViewDataSource,UITableViewDelegate>
+{
+    NSMutableArray *mVideos;
+}
 @property (weak, nonatomic) IBOutlet UIImageView *televisionImage;
 @property (weak, nonatomic) IBOutlet UITableView *mListVideo;
 @property (weak, nonatomic) IBOutlet UITabBar *mTabbar;
-@property (weak, nonatomic) IBOutlet UIView *listVideoView;
+
+@property (weak, nonatomic) IBOutlet UICollectionView *listViewColectionView;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topSpaceListVideo;
 
 @property(nonatomic, strong) IBOutlet YTPlayerView *playerView;
 @property(nonatomic, weak) IBOutlet UIButton *playButton;
