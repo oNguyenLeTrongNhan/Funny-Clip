@@ -14,6 +14,7 @@
 
 #import "PlaylistViewController.h"
 #import "JSONHTTPClient.h"
+#import "NSURLParameters.h"
 #import "VideoModel.h"
 #import <UIImageView+AFNetworking.h>
 #import <AFNetworking/AFHTTPRequestOperation.h>
@@ -27,13 +28,13 @@
   // [self.listViewColectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"collectCell"];
     
     //[super setTitleNavigationBar];
-   
+    self.listViewColectionView.bounces =NO ;
     [self.navigationController setNavigationBarHidden:YES];
-    NSString* videoID = @"PLy_TpcUT2LZvHD8JXHdJ4oe_UCWRjHB2I";
+    NSString* videoID = @"9IHb4PBrxYQ";
     [self.playButton setImage:[UIImage imageNamed:@"stop_on.png"] forState:UIControlStateSelected];
   // For a full list of player parameters, see the documentation for the HTML5 player
   // at: https://developers.google.com/youtube/player_parameters?playerVersion=HTML5
-  NSDictionary *playerVars = @{
+ playerVars = @{
     @"controls" : @0,
     @"playsinline" : @1,
     @"autohide" : @1,
@@ -42,7 +43,7 @@
   };
   self.playerView.delegate = self;
  
-  [self.playerView loadWithPlaylistId:videoID playerVars:playerVars];
+  [self.playerView loadWithVideoId:videoID playerVars:playerVars];
 
   [[NSNotificationCenter defaultCenter] addObserver:self
                                            selector:@selector(receivedPlaybackStartedNotification:)
@@ -50,7 +51,27 @@
                                              object:nil];
     
 
-    NSString* searchCall = [NSString stringWithFormat:@"http://gdata.youtube.com/feeds/api/videos?q=%@&max-results=50&alt=json", @"love"];
+   // NSString* searchCall = [NSString stringWithFormat:@"http://gdata.youtube.com/feeds/api/videos?q=%@&max-results=50&alt=json", @"love"];
+    NSString* searchCall= [NSString stringWithFormat:@"https://www.googleapis.com/youtube/v3/videos?id=TKlh9HLLMMk&key=AIzaSyBhzx8DXhQp4KAHPTBwdv1vYkLUl-QmIlc&part=snippet,contentDetails,statistics,status"];
+ 
+    NSURL *newUrl= [NSURL URLWithString:searchCall];
+//    NSURLRequest *request = [NSURLRequest requestWithURL:newUrl];
+//    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+//    operation.responseSerializer = [AFImageResponseSerializer serializer];
+//    
+//    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        NSLog(@"das");
+//        // self.backgroundImageView.image = responseObject;
+//        //        [self saveImage:responseObject withFilename:@"background.png"];
+//       // [cellScroll.thumnailImg setImage:responseObject];
+//        
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        
+//        NSLog(@"Error: %@", error);
+//    }];
+//    
+//    [operation start];
+    
     
     [JSONHTTPClient getJSONFromURLWithString: searchCall
                                   completion:^(NSDictionary *json, JSONModelError *err) {
@@ -79,6 +100,7 @@
                                       
                                   }];
 }
+
 - (void) showVideos {
     
     [self.listViewColectionView reloadData];
@@ -96,6 +118,10 @@
     return 1;
 }
 // 3
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    return CGSizeMake(self.listViewColectionView.frame.size.width/3-10, self.listViewColectionView.frame.size.width/3-10);
+}
+
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
    
     VideoItemCollectCell *cellScroll = [cv dequeueReusableCellWithReuseIdentifier:@"collectCell" forIndexPath:indexPath];
@@ -104,13 +130,14 @@
         [cv registerNib:[UINib nibWithNibName:@"VideoItemCollectCell" bundle:nil] forCellWithReuseIdentifier:@"collectCell"];
         cellScroll= [cv dequeueReusableCellWithReuseIdentifier:@"collectCell" forIndexPath:indexPath];
     }
-  //  NSLog(@"%i",indexPath.row);
- 
+
     VideoModel *mImageBK= [mVideos objectAtIndex:indexPath.row];
- MediaThumbnail *mThumnail=[mImageBK.thumbnail objectAtIndex:0];
-//    NSURL *url = [NSURL URLWithString:@"http://www.raywenderlich.com/wp-content/uploads/2014/01/sunny-background.png"];
-    NSURLRequest *request = [NSURLRequest requestWithURL:mThumnail.url];
+    MediaThumbnail *mThumnail=[mImageBK.thumbnail objectAtIndex:0];
+   // NSURL  *VideoURL= ((VideoLink *)[mImageBK.link objectAtIndex:3]).href;
+ 
     
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:mThumnail.url];
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     operation.responseSerializer = [AFImageResponseSerializer serializer];
     
@@ -129,15 +156,17 @@
   //  [cellScroll.thumnailImg setImage:[UIImage imageNamed:@"television.png"]];
         return cellScroll;
 }
-// 4
-/*- (UICollectionReusableView *)collectionView:
- (UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
- {
- return [[UICollectionReusableView alloc] init];
- }*/
 
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    VideoModel *mImageBK= [mVideos objectAtIndex:indexPath.row];
+   
+    NSURL  *VideoURL= ((VideoLink *)[mImageBK.link objectAtIndex:0]).href;
+    NSString *videoID= VideoURL[@"v"];
+    [self.playerView loadWithVideoId:videoID playerVars:playerVars];
+    [self.playerView playVideo];
 
+}
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
     mVideoCell * cell = [tableView dequeueReusableCellWithIdentifier:@"videoCell"];
@@ -147,8 +176,7 @@
         cell = [tableView dequeueReusableCellWithIdentifier:@"videoCell"];
      
     }
-   // VideoInfoModel *mVideoInfo;
-    //[mVideoInfo ];
+
   //  [cell initDataWithVideoInfo: ];
     cell.titleLabel.text=@"daad";
     return cell;
@@ -179,7 +207,39 @@
   } else if (sender == self.previousVideoButton) {
     //[self appendStatusText:@"Loading previous video in playlist\n"];
     [self.playerView previousVideo];
-  }
+  }else if (sender == self.ViewUpDownbtn) {
+      //[self appendStatusText:@"Loading previous video in playlist\n"];
+      if (!self.ViewUpDownbtn.isSelected) {
+          [self.ViewUpDownbtn setSelected:YES];
+          [self hideViewScroll];
+          //self.moveBannerOffScreen;
+          
+      } else {
+          [self.ViewUpDownbtn setSelected:NO];
+          [self ShowViewScroll];
+
+      }
+      
+       }
+}
+
+- (void) hideViewScroll {
+    
+    self.topSpaceListVideo.constant = self.view.frame.size.height;
+    [self.listViewColectionView setNeedsUpdateConstraints];
+    
+    [UIView animateWithDuration:0.25f animations:^{
+        [self.listViewColectionView layoutIfNeeded];
+    }];
+
+}
+- (void) ShowViewScroll {
+    self.topSpaceListVideo.constant = 50;
+    [self.listViewColectionView setNeedsUpdateConstraints];
+    
+    [UIView animateWithDuration:0.25f animations:^{
+        [self.listViewColectionView layoutIfNeeded];
+    }];
 }
 
 - (void)receivedPlaybackStartedNotification:(NSNotification *) notification {

@@ -77,6 +77,7 @@
 		69A8769B1AE38EB20073C6B1 /* stop_on@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 69A8768F1AE38EB20073C6B1 /* stop_on@2x~iphone.png */; };
 		69A8769F1AE394300073C6B1 /* mVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A8769D1AE394300073C6B1 /* mVideoCell.m */; };
 		69A876A01AE394300073C6B1 /* mVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69A8769E1AE394300073C6B1 /* mVideoCell.xib */; };
+		69EA86131AE6350800F612FA /* NSURLParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 69EA86121AE6350800F612FA /* NSURLParameters.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -195,6 +196,8 @@
 		69A8769C1AE394300073C6B1 /* mVideoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mVideoCell.h; sourceTree = "<group>"; };
 		69A8769D1AE394300073C6B1 /* mVideoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mVideoCell.m; sourceTree = "<group>"; };
 		69A8769E1AE394300073C6B1 /* mVideoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = mVideoCell.xib; sourceTree = "<group>"; };
+		69EA86111AE6350800F612FA /* NSURLParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSURLParameters.h; sourceTree = "<group>"; };
+		69EA86121AE6350800F612FA /* NSURLParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSURLParameters.m; sourceTree = "<group>"; };
 		82A58356B7293C6FD50E6C75 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -241,6 +244,7 @@
 		6915C7D41ADE05E4005AD7E1 /* Funny Clip */ = {
 			isa = PBXGroup;
 			children = (
+				69EA86101AE6350800F612FA /* NSURL+Parameters */,
 				699CDFC11AE41BE3005851CC /* Model */,
 				697FB1441ADEA2B000DFE12D /* AllViewController */,
 				69AB3F141ADE19FB00791DAD /* CustomView */,
@@ -467,6 +471,15 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		69EA86101AE6350800F612FA /* NSURL+Parameters */ = {
+			isa = PBXGroup;
+			children = (
+				69EA86111AE6350800F612FA /* NSURLParameters.h */,
+				69EA86121AE6350800F612FA /* NSURLParameters.m */,
+			);
+			path = "NSURL+Parameters";
+			sourceTree = "<group>";
+		};
 		7BE508E6149B342F7B4878B3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -682,6 +695,7 @@
 				699D84D31AE52ABD00C97851 /* VideoLink.m in Sources */,
 				699D85161AE52AD200C97851 /* JSONModel.m in Sources */,
 				699D85191AE52AD200C97851 /* JSONModelError.m in Sources */,
+				69EA86131AE6350800F612FA /* NSURLParameters.m in Sources */,
 				699CDFCA1AE41EF2005851CC /* VideoInfoModel.m in Sources */,
 				69598CC81AE548E5003BE85A /* VideoItemCollectCell.m in Sources */,
 				699D851D1AE52AD200C97851 /* JSONModel+networking.m in Sources */,

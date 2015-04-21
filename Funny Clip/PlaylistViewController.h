@@ -26,10 +26,14 @@
 @interface PlaylistViewController : FunBaseViewController<UICollectionViewDataSource,UICollectionViewDelegate, UITabBarDelegate,UITableViewDataSource,UITableViewDelegate>
 {
     NSMutableArray *mVideos;
+    NSDictionary *playerVars ;
+    
 }
 @property (weak, nonatomic) IBOutlet UIImageView *televisionImage;
 @property (weak, nonatomic) IBOutlet UITableView *mListVideo;
 @property (weak, nonatomic) IBOutlet UITabBar *mTabbar;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *bottomSpaceListVideo;
+@property (strong, nonatomic) IBOutlet UIButton *ViewUpDownbtn;
 
 @property (weak, nonatomic) IBOutlet UICollectionView *listViewColectionView;
 
