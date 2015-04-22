@@ -23,7 +23,7 @@
 - (void)loadView {
   self.title = @"YouTube Direct Lite";
   self.navigationItem.hidesBackButton = YES;
-
+  [self init];
   [self viewDidLoad];
 
   UIBarButtonItem *folderItem = [[UIBarButtonItem alloc] initWithTitle:@"Library"

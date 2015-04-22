@@ -21,18 +21,23 @@
 #import "VideoItemCollectCell.h"
 #import "GTLYouTube.h"
 #import "VideoData.h"
+#import "YouTubeGetUploads.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 //#import "VideoItemCollectCell.m"
 @protocol PlaylistViewControllerDelegate <NSObject>;
 @end;
 
-@interface PlaylistViewController : FunBaseViewController<UICollectionViewDataSource,UICollectionViewDelegate, UITabBarDelegate,UITableViewDataSource,UITableViewDelegate>
+@interface PlaylistViewController : FunBaseViewController<YouTubeGetUploadsDelegate,UICollectionViewDataSource,UICollectionViewDelegate, UITabBarDelegate,UITableViewDataSource,UITableViewDelegate>
 {
     NSMutableArray *mVideos;
     NSDictionary *playerVars ;
     
 }
-@property (nonatomic, retain) GTLServiceYouTube *youtubeService;
+@property(nonatomic, strong) NSArray *videos;
+@property(nonatomic, strong) YouTubeGetUploads *getUploads;
+@property(nonatomic, retain) GTLServiceYouTube *youtubeService;
+
+
 @property (weak, nonatomic) IBOutlet UIImageView *televisionImage;
 @property (weak, nonatomic) IBOutlet UITableView *mListVideo;
 @property (weak, nonatomic) IBOutlet UITabBar *mTabbar;

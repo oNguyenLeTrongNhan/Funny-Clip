@@ -18,7 +18,7 @@
 }
 
 -(NSString *)getThumbUri {
-    return self.video.snippet.thumbnails.defaultProperty.url;
+    return self.video.snippet.thumbnails.high.url;
 }
 
 -(NSString *)getWatchUri {
