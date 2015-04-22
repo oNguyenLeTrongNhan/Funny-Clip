@@ -2,10 +2,10 @@
 #import <MobileCoreServices/MobileCoreServices.h>
 #import "GTLYouTube.h"
 #import "VideoData.h"
-#import "YouTubeGetUploads.h"
+#import "YouTubeGetVideos.h"
 #import "YouTubeUploadVideo.h"
 
-@interface VideoListViewController : UITableViewController<YouTubeGetUploadsDelegate,
+@interface VideoListViewController : UITableViewController<YouTubeGetVideosDelegate,
                                                            UISearchBarDelegate,
                                                            UITableViewDataSource,
                                                            UITableViewDelegate,
@@ -15,7 +15,7 @@
 
 @property(nonatomic, strong) UITableView *tableView;
 @property(nonatomic, strong) NSArray *videos;
-@property(nonatomic, strong) YouTubeGetUploads *getUploads;
+@property(nonatomic, strong) YouTubeGetVideos *getVideos;
 @property(nonatomic, retain) GTLServiceYouTube *youtubeService;
 
 @end

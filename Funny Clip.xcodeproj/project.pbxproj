@@ -15,7 +15,7 @@
 		6914A3BA1AE74F6D00AAC253 /* VideoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6914A3AC1AE74F6D00AAC253 /* VideoPlayerViewController.m */; };
 		6914A3BB1AE74F6D00AAC253 /* VideoUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6914A3AE1AE74F6D00AAC253 /* VideoUploadViewController.m */; };
 		6914A3BC1AE74F6D00AAC253 /* YouTubeDirectTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 6914A3B01AE74F6D00AAC253 /* YouTubeDirectTag.m */; };
-		6914A3BD1AE74F6D00AAC253 /* YouTubeGetUploads.m in Sources */ = {isa = PBXBuildFile; fileRef = 6914A3B21AE74F6D00AAC253 /* YouTubeGetUploads.m */; };
+		6914A3BD1AE74F6D00AAC253 /* YouTubeGetVideos.m in Sources */ = {isa = PBXBuildFile; fileRef = 6914A3B21AE74F6D00AAC253 /* YouTubeGetVideos.m */; };
 		6914A3BE1AE74F6D00AAC253 /* YouTubeUploadVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6914A3B41AE74F6D00AAC253 /* YouTubeUploadVideo.m */; };
 		6914A3C11AE74F8D00AAC253 /* GTLCommon_Sources.m in Sources */ = {isa = PBXBuildFile; fileRef = 6914A3BF1AE74F8D00AAC253 /* GTLCommon_Sources.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6914A3C21AE74F8D00AAC253 /* GTLNetworking_Sources.m in Sources */ = {isa = PBXBuildFile; fileRef = 6914A3C01AE74F8D00AAC253 /* GTLNetworking_Sources.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -98,8 +98,8 @@
 		6914A3AE1AE74F6D00AAC253 /* VideoUploadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoUploadViewController.m; sourceTree = "<group>"; };
 		6914A3AF1AE74F6D00AAC253 /* YouTubeDirectTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouTubeDirectTag.h; sourceTree = "<group>"; };
 		6914A3B01AE74F6D00AAC253 /* YouTubeDirectTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YouTubeDirectTag.m; sourceTree = "<group>"; };
-		6914A3B11AE74F6D00AAC253 /* YouTubeGetUploads.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouTubeGetUploads.h; sourceTree = "<group>"; };
-		6914A3B21AE74F6D00AAC253 /* YouTubeGetUploads.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YouTubeGetUploads.m; sourceTree = "<group>"; };
+		6914A3B11AE74F6D00AAC253 /* YouTubeGetVideos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouTubeGetVideos.h; sourceTree = "<group>"; };
+		6914A3B21AE74F6D00AAC253 /* YouTubeGetVideos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YouTubeGetVideos.m; sourceTree = "<group>"; };
 		6914A3B31AE74F6D00AAC253 /* YouTubeUploadVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouTubeUploadVideo.h; sourceTree = "<group>"; };
 		6914A3B41AE74F6D00AAC253 /* YouTubeUploadVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YouTubeUploadVideo.m; sourceTree = "<group>"; };
 		6914A3BF1AE74F8D00AAC253 /* GTLCommon_Sources.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTLCommon_Sources.m; path = "../../google-api-objectivec-client-read-only/Source/GTLCommon_Sources.m"; sourceTree = "<group>"; };
@@ -233,8 +233,8 @@
 				6914A3AE1AE74F6D00AAC253 /* VideoUploadViewController.m */,
 				6914A3AF1AE74F6D00AAC253 /* YouTubeDirectTag.h */,
 				6914A3B01AE74F6D00AAC253 /* YouTubeDirectTag.m */,
-				6914A3B11AE74F6D00AAC253 /* YouTubeGetUploads.h */,
-				6914A3B21AE74F6D00AAC253 /* YouTubeGetUploads.m */,
+				6914A3B11AE74F6D00AAC253 /* YouTubeGetVideos.h */,
+				6914A3B21AE74F6D00AAC253 /* YouTubeGetVideos.m */,
 				6914A3B31AE74F6D00AAC253 /* YouTubeUploadVideo.h */,
 				6914A3B41AE74F6D00AAC253 /* YouTubeUploadVideo.m */,
 			);
@@ -682,7 +682,7 @@
 				699D84D31AE52ABD00C97851 /* VideoLink.m in Sources */,
 				699D85161AE52AD200C97851 /* JSONModel.m in Sources */,
 				699D85191AE52AD200C97851 /* JSONModelError.m in Sources */,
-				6914A3BD1AE74F6D00AAC253 /* YouTubeGetUploads.m in Sources */,
+				6914A3BD1AE74F6D00AAC253 /* YouTubeGetVideos.m in Sources */,
 				6914A3B71AE74F6D00AAC253 /* Utils.m in Sources */,
 				69EA86131AE6350800F612FA /* NSURLParameters.m in Sources */,
 				699CDFCA1AE41EF2005851CC /* VideoInfoModel.m in Sources */,

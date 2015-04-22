@@ -1,5 +1,5 @@
 //
-//  YouTubeGetUploads.h
+//  YouTubeGetVideos.h
 //  YouTube Direct Lite for iOS
 //
 //  Created by Ibrahim Ulukaya on 10/29/13.
@@ -9,26 +9,26 @@
 #import <Foundation/Foundation.h>
 #import "GTLYouTube.h"
 
-@protocol YouTubeGetUploadsDelegate;
+@protocol YouTubeGetVideosDelegate;
 
-@interface YouTubeGetUploads : NSObject
+@interface YouTubeGetVideos : NSObject
 
-@property(nonatomic, weak) id<YouTubeGetUploadsDelegate> delegate;
+@property(nonatomic, weak) id<YouTubeGetVideosDelegate> delegate;
 
 // Performs a G+ image search with the given query, will return
 // by calling googlePlusImageSearch:didFinishWithResults: when completed.
-- (void)getYouTubeUploadsWithService:(GTLServiceYouTube *)service;
+- (void)getYouTubeVideosWithService:(GTLServiceYouTube *)service;
 
 @end
 
 
 // Delegate protocol for returning results from the Image Search API.
-@protocol YouTubeGetUploadsDelegate<NSObject>
+@protocol YouTubeGetVideosDelegate<NSObject>
 
 // Called when an image search completes. |results| will contain
 // an array of NSDictionary containing keys for @"fullImage", @"thumbnail",
 // @"author" and @"title".
-- (void)getYouTubeUploads:(YouTubeGetUploads *)getUploads
+- (void)getYouTubeVideos:(YouTubeGetVideos *)getVideos
          didFinishWithResults:(NSArray *)results;
 
 @end

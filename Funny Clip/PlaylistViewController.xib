@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlaylistViewController">
             <connections>
                 <outlet property="ViewUpDownbtn" destination="OPz-jk-exJ" id="C0s-ZC-Glw"/>
+                <outlet property="bottomSpaceListVideo" destination="HsN-1S-qCS" id="02D-lr-7bP"/>
                 <outlet property="listViewColectionView" destination="OSZ-ez-Loh" id="tAt-Fx-YLL"/>
                 <outlet property="mListVideo" destination="T86-7R-AUz" id="brE-Y6-cNm"/>
                 <outlet property="nextVideoButton" destination="mPc-98-mD4" id="RcS-gZ-hqR"/>
@@ -15,6 +16,7 @@
                 <outlet property="playerView" destination="d72-ie-tMX" id="9Uz-0S-qaD"/>
                 <outlet property="previousVideoButton" destination="thq-fE-YYO" id="OoR-Vy-jAV"/>
                 <outlet property="televisionImage" destination="SOI-HB-vg9" id="9gt-iT-4j5"/>
+                <outlet property="topSpaceListVideo" destination="HsN-1S-qCS" id="3hL-ck-tff"/>
                 <outlet property="view" destination="wHL-AA-NOy" id="Wwv-wK-yBV"/>
             </connections>
         </placeholder>
@@ -54,12 +56,13 @@
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tvb-2U-Ca1" userLabel="Button1">
                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <state key="normal" backgroundImage="youtube_subscribe.png">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="58" id="8wT-ua-5SX">
                                     <variation key="heightClass=compact" constant="40"/>
@@ -113,12 +116,12 @@
                         </mask>
                         <mask key="constraints">
                             <exclude reference="4Gw-ZU-lhg"/>
-                            <exclude reference="Dz9-tu-L4S"/>
-                            <exclude reference="LEK-SO-p2a"/>
-                            <exclude reference="gQO-a7-gxt"/>
                             <exclude reference="Ecg-CH-nZ9"/>
                             <exclude reference="ukQ-kz-iU3"/>
                             <exclude reference="wz7-ta-6cN"/>
+                            <exclude reference="Dz9-tu-L4S"/>
+                            <exclude reference="LEK-SO-p2a"/>
+                            <exclude reference="gQO-a7-gxt"/>
                         </mask>
                     </variation>
                     <variation key="heightClass=compact">
@@ -127,12 +130,12 @@
                         </mask>
                         <mask key="constraints">
                             <include reference="4Gw-ZU-lhg"/>
-                            <include reference="Dz9-tu-L4S"/>
-                            <include reference="LEK-SO-p2a"/>
-                            <include reference="gQO-a7-gxt"/>
                             <include reference="Ecg-CH-nZ9"/>
                             <include reference="ukQ-kz-iU3"/>
                             <include reference="wz7-ta-6cN"/>
+                            <include reference="Dz9-tu-L4S"/>
+                            <include reference="LEK-SO-p2a"/>
+                            <include reference="gQO-a7-gxt"/>
                         </mask>
                     </variation>
                 </view>
@@ -145,13 +148,17 @@
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J2N-12-KAU" userLabel="Play">
                                     <rect key="frame" x="266" y="16" width="55" height="28"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="33" id="828-JB-jM1"/>
-                                        <constraint firstAttribute="width" constant="70" id="Gm8-yU-Zcf"/>
+                                        <constraint firstAttribute="height" constant="33" id="828-JB-jM1">
+                                            <variation key="heightClass=compact" constant="25"/>
+                                        </constraint>
+                                        <constraint firstAttribute="width" constant="70" id="Gm8-yU-Zcf">
+                                            <variation key="heightClass=compact" constant="50"/>
+                                        </constraint>
                                     </constraints>
-                                    <state key="normal" image="play_on.png">
+                                    <state key="normal" image="play_off.png">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
-                                    <state key="selected" image="stop_on.png"/>
+                                    <state key="selected" image="play_on.png"/>
                                     <variation key="default">
                                         <mask key="constraints">
                                             <exclude reference="828-JB-jM1"/>
@@ -172,9 +179,11 @@
                                     <rect key="frame" x="193" y="15" width="60" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="22" id="NKy-SD-A8v">
-                                            <variation key="heightClass=compact" constant="28"/>
+                                            <variation key="heightClass=compact" constant="20"/>
                                         </constraint>
-                                        <constraint firstAttribute="width" constant="70" id="lPi-VQ-g9U"/>
+                                        <constraint firstAttribute="width" constant="70" id="lPi-VQ-g9U">
+                                            <variation key="heightClass=compact" constant="50"/>
+                                        </constraint>
                                     </constraints>
                                     <state key="normal" image="youtube_next.png">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -200,9 +209,11 @@
                                     <rect key="frame" x="0.0" y="9" width="60" height="36"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="22" id="QuH-hN-zsX">
-                                            <variation key="heightClass=compact" constant="28"/>
+                                            <variation key="heightClass=compact" constant="20"/>
                                         </constraint>
-                                        <constraint firstAttribute="width" constant="73" id="rlO-nj-ahs"/>
+                                        <constraint firstAttribute="width" constant="73" id="rlO-nj-ahs">
+                                            <variation key="heightClass=compact" constant="50"/>
+                                        </constraint>
                                     </constraints>
                                     <state key="normal" title="Button" image="youtube_back.png">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -240,7 +251,7 @@
                                 <constraint firstItem="J2N-12-KAU" firstAttribute="leading" secondItem="Y6j-oL-S7b" secondAttribute="leading" constant="83" id="PR6-fW-gFO"/>
                                 <constraint firstItem="mPc-98-mD4" firstAttribute="leading" secondItem="Y6j-oL-S7b" secondAttribute="leading" constant="161" id="STp-Qs-Oqc"/>
                                 <constraint firstItem="thq-fE-YYO" firstAttribute="leading" secondItem="Y6j-oL-S7b" secondAttribute="leading" constant="5" id="cuu-cG-1J7">
-                                    <variation key="heightClass=compact" constant="8"/>
+                                    <variation key="heightClass=compact" constant="35"/>
                                 </constraint>
                                 <constraint firstItem="J2N-12-KAU" firstAttribute="top" secondItem="Y6j-oL-S7b" secondAttribute="top" constant="2" id="dZJ-ix-lUS"/>
                                 <constraint firstAttribute="width" constant="231" id="kwW-4I-0RM">
@@ -480,22 +491,22 @@
                     <exclude reference="OPz-jk-exJ"/>
                 </mask>
                 <mask key="constraints">
+                    <exclude reference="AtA-DQ-7y2"/>
+                    <exclude reference="HrT-ZT-Bjg"/>
+                    <exclude reference="rzI-lw-wZO"/>
                     <exclude reference="09s-Jg-vdg"/>
                     <exclude reference="eD6-U3-IPx"/>
                     <exclude reference="fOt-2Z-bUM"/>
                     <exclude reference="zGY-P1-2ne"/>
-                    <exclude reference="AtA-DQ-7y2"/>
-                    <exclude reference="HrT-ZT-Bjg"/>
-                    <exclude reference="rzI-lw-wZO"/>
-                    <exclude reference="HsN-1S-qCS"/>
-                    <exclude reference="TJg-ix-jab"/>
-                    <exclude reference="ewb-kY-e1Q"/>
                     <exclude reference="16q-VY-g19"/>
                     <exclude reference="8R1-ec-s5C"/>
                     <exclude reference="9Tg-Dk-h3A"/>
                     <exclude reference="AdB-zo-gif"/>
                     <exclude reference="W9y-OA-Pay"/>
                     <exclude reference="br8-su-IBO"/>
+                    <exclude reference="HsN-1S-qCS"/>
+                    <exclude reference="TJg-ix-jab"/>
+                    <exclude reference="ewb-kY-e1Q"/>
                 </mask>
             </variation>
             <variation key="heightClass=compact">
@@ -504,32 +515,32 @@
                     <include reference="OPz-jk-exJ"/>
                 </mask>
                 <mask key="constraints">
+                    <exclude reference="AtA-DQ-7y2"/>
+                    <include reference="HrT-ZT-Bjg"/>
+                    <include reference="rzI-lw-wZO"/>
                     <include reference="09s-Jg-vdg"/>
                     <include reference="eD6-U3-IPx"/>
                     <include reference="fOt-2Z-bUM"/>
                     <include reference="zGY-P1-2ne"/>
-                    <exclude reference="AtA-DQ-7y2"/>
-                    <include reference="HrT-ZT-Bjg"/>
-                    <include reference="rzI-lw-wZO"/>
-                    <include reference="HsN-1S-qCS"/>
-                    <include reference="TJg-ix-jab"/>
-                    <include reference="ewb-kY-e1Q"/>
                     <include reference="16q-VY-g19"/>
                     <include reference="8R1-ec-s5C"/>
                     <exclude reference="9Tg-Dk-h3A"/>
                     <exclude reference="AdB-zo-gif"/>
                     <include reference="W9y-OA-Pay"/>
                     <include reference="br8-su-IBO"/>
+                    <include reference="HsN-1S-qCS"/>
+                    <include reference="TJg-ix-jab"/>
+                    <include reference="ewb-kY-e1Q"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="74" y="98"/>
+            <point key="canvasLocation" x="-67" y="-51"/>
         </view>
     </objects>
     <resources>
         <image name="bk_on.png" width="70" height="21"/>
         <image name="fw_on.png" width="70" height="21"/>
+        <image name="play_off.png" width="600" height="421"/>
         <image name="play_on.png" width="1024" height="721"/>
-        <image name="stop_on.png" width="70" height="33"/>
         <image name="television.png" width="1138" height="811"/>
         <image name="youtube_back.png" width="640" height="628"/>
         <image name="youtube_kute.png" width="920" height="492"/>

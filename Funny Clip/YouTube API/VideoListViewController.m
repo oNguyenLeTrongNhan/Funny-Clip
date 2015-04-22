@@ -12,8 +12,8 @@
 - (id)init {
   self = [super init];
   if (self) {
-      _getUploads = [[YouTubeGetUploads alloc] init];
-      _getUploads.delegate = self;
+      _getVideos = [[YouTubeGetVideos alloc] init];
+      _getVideos.delegate = self;
       _videos = [[NSArray alloc] init];
   }
   return self;
@@ -49,7 +49,7 @@
   self.tableView.separatorColor = [UIColor clearColor];
   self.view = self.tableView;
 
-  [self.getUploads getYouTubeUploadsWithService:self.youtubeService];
+  [self.getVideos getYouTubeVideosWithService:self.youtubeService];
 }
 
 -(void)folderButtonPressed:(UIButton *)button
@@ -65,7 +65,7 @@
 
 #pragma mark - YouTubeGetUploadsDelegate methods
 
-- (void)getYouTubeUploads:(YouTubeGetUploads *)getUploads didFinishWithResults:(NSArray *)results {
+- (void)getYouTubeVideos:(YouTubeGetVideos *)getUploads didFinishWithResults:(NSArray *)results {
   [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
   self.videos = results;
   [self.tableView reloadData];

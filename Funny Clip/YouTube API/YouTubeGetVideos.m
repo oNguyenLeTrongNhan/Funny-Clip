@@ -1,29 +1,33 @@
 //
-//  YouTubeGetUploads.m
+//  YouTubeGetVideos.m
 //  YouTube Direct Lite for iOS
 //
 //  Created by Ibrahim Ulukaya on 10/29/13.
 //  Copyright (c) 2013 Google. All rights reserved.
 //
 
-#import "YouTubeGetUploads.h"
+#import "YouTubeGetVideos.h"
 #import "VideoData.h"
 //#import "MainViewController.h"
 
 // Thumbnail image size.
-static const CGFloat kCropDimension = 70;
+static const CGFloat kCropDimension = 120;
 
-@implementation YouTubeGetUploads
+@implementation YouTubeGetVideos
 
 
-- (void)getYouTubeUploadsWithService:(GTLServiceYouTube *)service {
+- (void)getYouTubeVideosWithService:(GTLServiceYouTube *)service {
     // Construct query
     GTLQueryYouTube *channelsListQuery = [GTLQueryYouTube
                                           
                                           queryForChannelsListWithPart:@"contentDetails"];
     
-    channelsListQuery.mine = YES;
+    //channelsListQuery.mine =YES;
+    channelsListQuery.forUsername=@"trongnhan68";
+    // channelsListQuery.channelId=@"UCfF4l8coMQddgehpwdl4lqA";
     
+    //@"UCfF4l8coMQddgehpwdl4lqA";
+   //  channelsListQuery.forContentOwner
     // This callback uses the block syntax
     
     [service executeQuery:channelsListQuery
@@ -33,7 +37,7 @@ static const CGFloat kCropDimension = 70;
                             *response, NSError *error) {
             
             if (error) {
-                [self.delegate getYouTubeUploads:self didFinishWithResults:nil];
+                [self.delegate getYouTubeVideos:self didFinishWithResults:nil];
                 return;
             }
             
@@ -43,13 +47,13 @@ static const CGFloat kCropDimension = 70;
                 
                 GTLYouTubeChannel *channel = response[0];
                 
-                NSString *uploadsPlaylistId =
+                NSString *videosPlaylistId =
                 
-                channel.contentDetails.relatedPlaylists.uploads;
+                channel.contentDetails.relatedPlaylists.likes;
                 
                 GTLQueryYouTube *playlistItemsListQuery = [GTLQueryYouTube queryForPlaylistItemsListWithPart:@"contentDetails"];
-                playlistItemsListQuery.maxResults = 20l;
-                playlistItemsListQuery.playlistId =  @"PLlt7CLWeLQwAzuAVjnA_jqHZTocYVKZJd"; //uploadsPlaylistId;
+                playlistItemsListQuery.maxResults = 50l;
+                playlistItemsListQuery.playlistId =  videosPlaylistId;
                 
                 // This callback uses the block syntax
                 
@@ -60,7 +64,7 @@ static const CGFloat kCropDimension = 70;
                                         *response, NSError *error) {
                         
                         if (error) {
-                            [self.delegate getYouTubeUploads:self didFinishWithResults:nil];
+                            [self.delegate getYouTubeVideos:self didFinishWithResults:nil];
                             return;
                         }
                         
@@ -84,7 +88,7 @@ static const CGFloat kCropDimension = 70;
                                                 
                                                 *response, NSError *error) {
                                 if (error) {
-                                    [self.delegate getYouTubeUploads:self didFinishWithResults:nil];
+                                    [self.delegate getYouTubeVideos:self didFinishWithResults:nil];
                                     return;
                                 }
                                 
@@ -130,7 +134,7 @@ static const CGFloat kCropDimension = 70;
                                     // Once all the images have been fetched and cached, call
                                     // our delegate on the main thread.
                                     dispatch_async(dispatch_get_main_queue(), ^{
-                                        [self.delegate getYouTubeUploads:self
+                                        [self.delegate getYouTubeVideos:self
                                                         didFinishWithResults:videos];
                                     });
                                 });

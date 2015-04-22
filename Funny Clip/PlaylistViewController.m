@@ -33,8 +33,8 @@
 {
     self = [super init];
     if (self) {
-        _getUploads = [[YouTubeGetUploads alloc] init];
-        _getUploads.delegate = self;
+        _getVideos = [[YouTubeGetVideos alloc] init];
+        _getVideos.delegate = self;
         _videos = [[NSArray alloc] init];
     }
     return self;
@@ -45,6 +45,7 @@
     [super viewDidAppear:animated];
     //[self.playerView setBackgroundColor:[UIColor blackColor]];
    // [self.playerView setHidden:NO];
+      [self.getVideos getYouTubeVideosWithService:self.youtubeService];
 
 }
 
@@ -74,7 +75,7 @@
 }
 #pragma mark - YouTubeGetUploadsDelegate methods
 
-- (void)getYouTubeUploads:(YouTubeGetUploads *)getUploads didFinishWithResults:(NSArray *)results {
+- (void)getYouTubeVideos:(YouTubeGetVideos *)getVideos didFinishWithResults:(NSArray *)results {
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     self.videos = results;
   //  [self.tableView reloadData];
@@ -98,7 +99,7 @@
         [[self navigationController] pushViewController:[self createAuthController] animated:YES];
     }
 
-    [self.getUploads getYouTubeUploadsWithService:self.youtubeService];
+  
     self.listViewColectionView.bounces =NO ;
     [self.navigationController setNavigationBarHidden:YES];
     NSString* videoID = @"9IHb4PBrxYQ";
@@ -294,23 +295,23 @@
 }
 
 - (void) hideViewScroll {
-     self.bottomSpaceListVideo.constant = self.view.frame.size.height-10- self.topSpaceListVideo.constant;
+    // self.bottomSpaceListVideo.constant = self.view.frame.size.height-10- self.topSpaceListVideo.constant;
      self.topSpaceListVideo.constant = self.view.frame.size.height-10;
     
     //self.bottomSpaceListVideo.constant -= self.view.frame.size.height;
     [self.view setNeedsUpdateConstraints];
     
-    [UIView animateWithDuration:2.f animations:^{
+    [UIView animateWithDuration:1.f animations:^{
         [self.view layoutIfNeeded];
     }];
 
 }
 - (void) ShowViewScroll {
     self.topSpaceListVideo.constant = 50;
-    self.bottomSpaceListVideo.constant=0;
+   // self.bottomSpaceListVideo.constant=0;
     [self.view setNeedsUpdateConstraints];
     
-    [UIView animateWithDuration:2.f animations:^{
+    [UIView animateWithDuration:1.f animations:^{
         [self.view layoutIfNeeded];
     }];
 }
@@ -343,12 +344,13 @@
         self.youtubeService.authorizer = nil;
     } else {
         self.youtubeService.authorizer = authResult;
+        
     }
 }
 
 - (void)receivedPlaybackStartedNotification:(NSNotification *) notification {
   if([notification.name isEqual:@"Playback started"] && notification.object != self) {
-    [self.playerView pauseVideo];
+    //[self.playerView pauseVideo];
       [self.playerView setHidden:NO];
   }
 }
