@@ -19,6 +19,9 @@
 #import "NMBottomTabBarController.h"
 #import "mVideoCell.h"
 #import "VideoItemCollectCell.h"
+#import "GTLYouTube.h"
+#import "VideoData.h"
+#import <MobileCoreServices/MobileCoreServices.h>
 //#import "VideoItemCollectCell.m"
 @protocol PlaylistViewControllerDelegate <NSObject>;
 @end;
@@ -29,6 +32,7 @@
     NSDictionary *playerVars ;
     
 }
+@property (nonatomic, retain) GTLServiceYouTube *youtubeService;
 @property (weak, nonatomic) IBOutlet UIImageView *televisionImage;
 @property (weak, nonatomic) IBOutlet UITableView *mListVideo;
 @property (weak, nonatomic) IBOutlet UITabBar *mTabbar;

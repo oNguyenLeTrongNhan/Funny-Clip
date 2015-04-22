@@ -18,9 +18,79 @@
 #import "VideoModel.h"
 #import <UIImageView+AFNetworking.h>
 #import <AFNetworking/AFHTTPRequestOperation.h>
+
+#import "GTMOAuth2ViewControllerTouch.h"
+#import "VideoData.h"
+#import "UploadController.h"
+#import "VideoListViewController.h"
+#import "Utils.h"
+
 @implementation PlaylistViewController
+@synthesize youtubeService;
 - (void)awakeFromNib{
   
+}
+// Helper to check if user is authorized
+- (BOOL)isAuthorized {
+    return [((GTMOAuth2Authentication *)self.youtubeService.authorizer) canAuthorize];
+}
+
+// Creates the auth controller for authorizing access to YouTube.
+- (GTMOAuth2ViewControllerTouch *)createAuthController
+{
+    GTMOAuth2ViewControllerTouch *authController;
+    
+    authController = [[GTMOAuth2ViewControllerTouch alloc] initWithScope:kGTLAuthScopeYouTube
+                                                                clientID:kClientID
+                                                            clientSecret:kClientSecret
+                                                        keychainItemName:kKeychainItemName
+                                                                delegate:self
+                                                        finishedSelector:@selector(viewController:finishedWithAuth:error:)];
+    return authController;
+}
+
+// Handle completion of the authorization process, and updates the YouTube service
+// with the new credentials.
+- (void)viewController:(GTMOAuth2ViewControllerTouch *)viewController
+      finishedWithAuth:(GTMOAuth2Authentication *)authResult
+                 error:(NSError *)error {
+    if (error != nil) {
+        [Utils showAlert:@"Authentication Error" message:error.localizedDescription];
+        self.youtubeService.authorizer = nil;
+    } else {
+        self.youtubeService.authorizer = authResult;
+    }
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    // Always display the camera UI.
+    [self showList];
+}
+
+- (void)showList {
+    VideoListViewController *listUI = [[VideoListViewController alloc] init];
+    listUI.youtubeService = self.youtubeService;
+    [[self navigationController] pushViewController:listUI animated:YES];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)startOAuthFlow:(id)sender {
+    GTMOAuth2ViewControllerTouch *viewController;
+    
+    viewController = [[GTMOAuth2ViewControllerTouch alloc]
+                      initWithScope:kGTLAuthScopeYouTube
+                      clientID:kClientID
+                      clientSecret:kClientSecret
+                      keychainItemName:kKeychainItemName
+                      delegate:self
+                      finishedSelector:@selector(viewController:finishedWithAuth:error:)];
+    
+    [[self navigationController] pushViewController:viewController animated:YES];
 }
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -72,33 +142,45 @@
 //    
 //    [operation start];
     
+//    
+//    [JSONHTTPClient getJSONFromURLWithString: searchCall
+//                                  completion:^(NSDictionary *json, JSONModelError *err) {
+//                                      
+//                                      //got JSON back
+//                                      NSLog(@"Got JSON from web: %@", json);
+//                                      
+//                                      if (err) {
+//                                          [[[UIAlertView alloc] initWithTitle:@"Error"
+//                                                                      message:[err localizedDescription]
+//                                                                     delegate:nil
+//                                                            cancelButtonTitle:@"Close"
+//                                                            otherButtonTitles: nil] show];
+//                                          return;
+//                                      }
+//                                      
+//                                      //initialize the models
+//                                      mVideos = [VideoModel arrayOfModelsFromDictionaries:
+//                                                json[@"feed"][@"entry"]
+//                                                ];
+//                                      
+//                                      if (mVideos) NSLog(@"Loaded successfully models");
+//                                      
+//                                      //show the videos
+//                                      [self showVideos];
+//                                      
+//                                  }];
     
-    [JSONHTTPClient getJSONFromURLWithString: searchCall
-                                  completion:^(NSDictionary *json, JSONModelError *err) {
-                                      
-                                      //got JSON back
-                                      NSLog(@"Got JSON from web: %@", json);
-                                      
-                                      if (err) {
-                                          [[[UIAlertView alloc] initWithTitle:@"Error"
-                                                                      message:[err localizedDescription]
-                                                                     delegate:nil
-                                                            cancelButtonTitle:@"Close"
-                                                            otherButtonTitles: nil] show];
-                                          return;
-                                      }
-                                      
-                                      //initialize the models
-                                      mVideos = [VideoModel arrayOfModelsFromDictionaries:
-                                                json[@"feed"][@"entry"]
-                                                ];
-                                      
-                                      if (mVideos) NSLog(@"Loaded successfully models");
-                                      
-                                      //show the videos
-                                      [self showVideos];
-                                      
-                                  }];
+    
+    
+    self.youtubeService = [[GTLServiceYouTube alloc] init];
+    self.youtubeService.authorizer =
+    [GTMOAuth2ViewControllerTouch authForGoogleFromKeychainForName:kKeychainItemName
+                                                          clientID:kClientID
+                                                      clientSecret:kClientSecret];
+    if (![self isAuthorized]) {
+        // Not yet authorized, request authorization and push the login UI onto the navigation stack.
+        [[self navigationController] pushViewController:[self createAuthController] animated:YES];
+    }
 }
 
 - (void) showVideos {
