@@ -41,12 +41,12 @@
 @property (weak, nonatomic) IBOutlet UIImageView *televisionImage;
 @property (weak, nonatomic) IBOutlet UITableView *mListVideo;
 @property (weak, nonatomic) IBOutlet UITabBar *mTabbar;
-@property (strong, nonatomic) IBOutlet NSLayoutConstraint *bottomSpaceListVideo;
 @property (strong, nonatomic) IBOutlet UIButton *ViewUpDownbtn;
 
 @property (weak, nonatomic) IBOutlet UICollectionView *listViewColectionView;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topSpaceListVideo;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *bottomSpaceListVideo;
 
 @property(nonatomic, strong) IBOutlet YTPlayerView *playerView;
 @property(nonatomic, weak) IBOutlet UIButton *playButton;

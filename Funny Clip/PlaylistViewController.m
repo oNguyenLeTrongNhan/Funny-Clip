@@ -24,7 +24,8 @@
 #import "UploadController.h"
 #import "VideoListViewController.h"
 #import "Utils.h"
-
+// Thumbnail image size.
+static const CGFloat kCropDimension = 120;
 @implementation PlaylistViewController
 @synthesize youtubeService;
 
@@ -123,35 +124,7 @@
                                              object:nil];
     
 
-   // NSString* searchCall = [NSString stringWithFormat:@"http://gdata.youtube.com/feeds/api/videos?q=%@&max-results=50&alt=json", @"love"];
-  //    [JSONHTTPClient getJSONFromURLWithString: searchCall
-//                                  completion:^(NSDictionary *json, JSONModelError *err) {
-//                                      
-//                                      //got JSON back
-//                                      NSLog(@"Got JSON from web: %@", json);
-//                                      
-//                                      if (err) {
-//                                          [[[UIAlertView alloc] initWithTitle:@"Error"
-//                                                                      message:[err localizedDescription]
-//                                                                     delegate:nil
-//                                                            cancelButtonTitle:@"Close"
-//                                                            otherButtonTitles: nil] show];
-//                                          return;
-//                                      }
-//                                      
-//                                      //initialize the models
-//                                      mVideos = [VideoModel arrayOfModelsFromDictionaries:
-//                                                json[@"feed"][@"entry"]
-//                                                ];
-//                                      
-//                                      if (mVideos) NSLog(@"Loaded successfully models");
-//                                      
-//                                      //show the videos
-//                                      [self showVideos];
-//                                      
-//                                  }];
-    
-    
+      
     
   }
 
@@ -185,35 +158,35 @@
         cellScroll= [cv dequeueReusableCellWithReuseIdentifier:@"collectCell" forIndexPath:indexPath];
     }
 
-    VideoData *vidData = [self.videos objectAtIndex:indexPath.row];
-    cellScroll.thumnailImg.image = vidData.thumbnail;
-   cellScroll.titleLbl.text = [vidData getTitle];
-//    cellScroll.description.text = [NSString stringWithFormat:@"%@ -- %@ views",
-//                                 [Utils humanReadableFromYouTubeTime:vidData.getDuration],
-//                                 vidData.getViews];
+    VideoData *vData = [self.videos objectAtIndex:indexPath.row];
+   // cellScroll.thumnailImg.image = vidData.thumbnail;
+   cellScroll.titleLbl.text = [vData getTitle];
+    
+      NSURL *url = [NSURL URLWithString:vData.getThumbUri];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    operation.responseSerializer = [AFImageResponseSerializer serializer];
+    
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"das");
+        UIGraphicsBeginImageContext(CGSizeMake(kCropDimension,
+                                               kCropDimension));
+        vData.fullImage = responseObject;
+        [ responseObject drawInRect:
+         CGRectMake(0, 0, kCropDimension, kCropDimension)];
+        vData.thumbnail = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+     //   cellScroll.thumnailImg.image =vData.thumbnail;
+        [cellScroll.thumnailImg setImage:vData.fullImage];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"Error: %@", error);
+    }];
+  
+    [operation start];
+    
  
-    
-    
-  //  VideoModel *mImageBK= [mVideos objectAtIndex:indexPath.row];
- //   MediaThumbnail *mThumnail=[mImageBK.thumbnail objectAtIndex:0];
-   // NSURL  *VideoURL= ((VideoLink *)[mImageBK.link objectAtIndex:3]).href;
-//    NSURLRequest *request = [NSURLRequest requestWithURL:mThumnail.url];
-//    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-//    operation.responseSerializer = [AFImageResponseSerializer serializer];
-//    
-//    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-//        NSLog(@"das");
-//        // self.backgroundImageView.image = responseObject;
-//        //        [self saveImage:responseObject withFilename:@"background.png"];
-//        [cellScroll.thumnailImg setImage:responseObject];
-//        
-//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//        
-//        NSLog(@"Error: %@", error);
-//    }];
-//    
-//    [operation start];
-  //  [cellScroll.thumnailImg setImage:[UIImage imageNamed:@"television.png"]];
         return cellScroll;
 }
 
@@ -295,8 +268,8 @@
 }
 
 - (void) hideViewScroll {
-    // self.bottomSpaceListVideo.constant = self.view.frame.size.height-10- self.topSpaceListVideo.constant;
-     self.topSpaceListVideo.constant = self.view.frame.size.height-10;
+    self.bottomSpaceListVideo.constant = self.view.frame.size.height;
+   //  self.topSpaceListVideo.constant = self.view.frame.size.height;
     
     //self.bottomSpaceListVideo.constant -= self.view.frame.size.height;
     [self.view setNeedsUpdateConstraints];
@@ -307,7 +280,8 @@
 
 }
 - (void) ShowViewScroll {
-    self.topSpaceListVideo.constant = 50;
+   // self.topSpaceListVideo.constant = 50;
+    self.bottomSpaceListVideo.constant = 60;;
    // self.bottomSpaceListVideo.constant=0;
     [self.view setNeedsUpdateConstraints];
     

@@ -103,41 +103,41 @@ static const CGFloat kCropDimension = 120;
                                         [videos addObject:vData];
                                     }
                                 }
-                                
+                                [self.delegate getYouTubeVideos:self didFinishWithResults:videos];
                                 // Schedule an async job to fetch the image data for each result and
                                 // resize the large image in to a smaller thumbnail.
-                                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-                                    NSMutableArray *removeThese = [NSMutableArray array];
-                                    
-                                    for (VideoData *vData in videos) {
-                                        // Fetch synchronously the full sized image.
-                                        NSURL *url = [NSURL URLWithString:vData.getThumbUri];
-                                        NSData *imageData = [NSData dataWithContentsOfURL:url];
-                                        UIImage *image = [UIImage imageWithData:imageData];
-                                        if (!image) {
-                                            [removeThese addObject:vData];
-                                            continue;
-                                        }
-                                        vData.fullImage = image;
-                                        // Create a thumbnail from the fullsized image.
-                                        UIGraphicsBeginImageContext(CGSizeMake(kCropDimension,
-                                                                               kCropDimension));
-                                        [image drawInRect:
-                                         CGRectMake(0, 0, kCropDimension, kCropDimension)];
-                                        vData.thumbnail = UIGraphicsGetImageFromCurrentImageContext();
-                                        UIGraphicsEndImageContext();
-                                    }
-                                    
-                                    // Remove images that has no image data.
-                                    [videos removeObjectsInArray:removeThese];
-                                    
-                                    // Once all the images have been fetched and cached, call
-                                    // our delegate on the main thread.
-                                    dispatch_async(dispatch_get_main_queue(), ^{
-                                        [self.delegate getYouTubeVideos:self
-                                                        didFinishWithResults:videos];
-                                    });
-                                });
+//                                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+//                                    NSMutableArray *removeThese = [NSMutableArray array];
+//                                    
+//                                    for (VideoData *vData in videos) {
+//                                        // Fetch synchronously the full sized image.
+//                                        NSURL *url = [NSURL URLWithString:vData.getThumbUri];
+//                                        NSData *imageData = [NSData dataWithContentsOfURL:url];
+//                                        UIImage *image = [UIImage imageWithData:imageData];
+//                                        if (!image) {
+//                                            [removeThese addObject:vData];
+//                                            continue;
+//                                        }
+//                                        vData.fullImage = image;
+//                                        // Create a thumbnail from the fullsized image.
+//                                        UIGraphicsBeginImageContext(CGSizeMake(kCropDimension,
+//                                                                               kCropDimension));
+//                                        [image drawInRect:
+//                                         CGRectMake(0, 0, kCropDimension, kCropDimension)];
+//                                        vData.thumbnail = UIGraphicsGetImageFromCurrentImageContext();
+//                                        UIGraphicsEndImageContext();
+//                                    }
+//                                    
+//                                    // Remove images that has no image data.
+//                                    [videos removeObjectsInArray:removeThese];
+//                                    
+//                                    // Once all the images have been fetched and cached, call
+//                                    // our delegate on the main thread.
+//                                    dispatch_async(dispatch_get_main_queue(), ^{
+//                                        [self.delegate getYouTubeVideos:self
+//                                                        didFinishWithResults:videos];
+//                                    });
+//                                });
                                 
                             }];
                     }];

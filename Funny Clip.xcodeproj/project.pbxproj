@@ -66,6 +66,11 @@
 		699D851E1AE52AD200C97851 /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 699D84EF1AE52AD200C97851 /* JSONKeyMapper.m */; };
 		699D851F1AE52AD200C97851 /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 699D84F11AE52AD200C97851 /* JSONValueTransformer.m */; };
 		699D85391AE52E4900C97851 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 699D85381AE52E4900C97851 /* libPods.a */; };
+		69A52C631AE8E12F00EA91CE /* _1.png in Resources */ = {isa = PBXBuildFile; fileRef = 69A52C601AE8E12F00EA91CE /* _1.png */; };
+		69A52C641AE8E12F00EA91CE /* background_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 69A52C611AE8E12F00EA91CE /* background_2.png */; };
+		69A52C651AE8E12F00EA91CE /* icon_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 69A52C621AE8E12F00EA91CE /* icon_menu.png */; };
+		69A52C671AE8E40300EA91CE /* icon_listvideo_recent.png in Resources */ = {isa = PBXBuildFile; fileRef = 69A52C661AE8E40300EA91CE /* icon_listvideo_recent.png */; };
+		69A52C691AE8E48000EA91CE /* play_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 69A52C681AE8E48000EA91CE /* play_on.png */; };
 		69A8769F1AE394300073C6B1 /* mVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A8769D1AE394300073C6B1 /* mVideoCell.m */; };
 		69A876A01AE394300073C6B1 /* mVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69A8769E1AE394300073C6B1 /* mVideoCell.xib */; };
 		69EA86131AE6350800F612FA /* NSURLParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 69EA86121AE6350800F612FA /* NSURLParameters.m */; };
@@ -184,6 +189,11 @@
 		699D853C1AE52E6200C97851 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		699D853E1AE52E7400C97851 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		699D85401AE52E7E00C97851 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		69A52C601AE8E12F00EA91CE /* _1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _1.png; sourceTree = "<group>"; };
+		69A52C611AE8E12F00EA91CE /* background_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_2.png; sourceTree = "<group>"; };
+		69A52C621AE8E12F00EA91CE /* icon_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_menu.png; sourceTree = "<group>"; };
+		69A52C661AE8E40300EA91CE /* icon_listvideo_recent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_listvideo_recent.png; sourceTree = "<group>"; };
+		69A52C681AE8E48000EA91CE /* play_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play_on.png; sourceTree = "<group>"; };
 		69A8769C1AE394300073C6B1 /* mVideoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mVideoCell.h; sourceTree = "<group>"; };
 		69A8769D1AE394300073C6B1 /* mVideoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mVideoCell.m; sourceTree = "<group>"; };
 		69A8769E1AE394300073C6B1 /* mVideoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = mVideoCell.xib; sourceTree = "<group>"; };
@@ -441,8 +451,13 @@
 			children = (
 				698236F31AE7AA7A001D81EF /* youtube_next.png */,
 				698236F41AE7AA7A001D81EF /* youtube_pause.png */,
+				69A52C681AE8E48000EA91CE /* play_on.png */,
 				698236E31AE7A405001D81EF /* play_icon.jpg */,
 				698236E41AE7A405001D81EF /* play_off.png */,
+				69A52C601AE8E12F00EA91CE /* _1.png */,
+				69A52C661AE8E40300EA91CE /* icon_listvideo_recent.png */,
+				69A52C611AE8E12F00EA91CE /* background_2.png */,
+				69A52C621AE8E12F00EA91CE /* icon_menu.png */,
 				698236F11AE7AA55001D81EF /* youtube_back.png */,
 				698236E51AE7A405001D81EF /* play_on.png */,
 				698236E61AE7A405001D81EF /* previous.png */,
@@ -585,16 +600,21 @@
 			files = (
 				6914A3C61AE7505000AAC253 /* GTMOAuth2ViewTouch.xib in Resources */,
 				69A876A01AE394300073C6B1 /* mVideoCell.xib in Resources */,
+				69A52C651AE8E12F00EA91CE /* icon_menu.png in Resources */,
 				699CDFC01AE3E4D2005851CC /* television.png in Resources */,
 				69598CC91AE548E5003BE85A /* VideoItemCollectCell.xib in Resources */,
+				69A52C641AE8E12F00EA91CE /* background_2.png in Resources */,
 				698236EC1AE7A405001D81EF /* play_off.png in Resources */,
+				69A52C671AE8E40300EA91CE /* icon_listvideo_recent.png in Resources */,
 				698236EB1AE7A405001D81EF /* play_icon.jpg in Resources */,
 				698236EE1AE7A405001D81EF /* previous.png in Resources */,
 				698236F51AE7AA7A001D81EF /* youtube_next.png in Resources */,
+				69A52C631AE8E12F00EA91CE /* _1.png in Resources */,
 				6955CEB81ADE76B60093E1C8 /* BaseNavigationController.xib in Resources */,
 				6914A3B51AE74F6D00AAC253 /* iframe-player.html in Resources */,
 				698236F21AE7AA55001D81EF /* youtube_back.png in Resources */,
 				698236ED1AE7A405001D81EF /* play_on.png in Resources */,
+				69A52C691AE8E48000EA91CE /* play_on.png in Resources */,
 				6915C7E61ADE05E4005AD7E1 /* LaunchScreen.xib in Resources */,
 				6915C7E31ADE05E4005AD7E1 /* Images.xcassets in Resources */,
 				697FB1431ADE9A7700DFE12D /* FunBaseViewController.xib in Resources */,
